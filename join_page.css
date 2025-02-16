@@ -1,5 +1,5 @@
 :root {
-  --shinonome: linear-gradient(91deg, #6f5878 0.02%, #4f648d 99.98%);
+  --shinonome: linear-gradient(91deg, #6f5878 0.02%, #4f648d);
   --blue_Kashmir: #52648c;
   --gray: #535353;
   --ivory: #fffcf7;
@@ -21,7 +21,7 @@
 }
 
 .join-flow-container {
-  width: 1440px;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
