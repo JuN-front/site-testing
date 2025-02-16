@@ -35,6 +35,8 @@
 
 .will-logo {
   flex-shrink: 0;
+  width: 30px;
+  height: 30px;
 }
 
 .link-box {
@@ -45,7 +47,7 @@
 
 .text-link {
   color: var(--gray);
-  font-size: var(--font_16);
+  font-size: var(--font_20);
   font-family: var(--noto);
   font-style: normal;
   font-weight: 400;
@@ -163,7 +165,7 @@
 
 .join-flow-content {
   align-items: flex-end;
-  gap: 46px;
+  margin-left: 46px;
   border-left: solid 1px var(--gray);
   align-self: stretch;
 }
