@@ -458,11 +458,6 @@
   gap: 10px;
 }
 
-.x-logo img {
-  width: 60px;
-  height: 60px;
-}
-
 .instagram-logo {
   display: flex;
   padding: 12px;
@@ -472,14 +467,10 @@
   gap: 10px;
 }
 
-.instagram-logo img {
-  width: 60px;
-  height: 60px;
-}
-
-.footer-logo img {
+.footer-logo {
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .footer-copyright {
@@ -491,15 +482,10 @@
   align-self: stretch;
 }
 
-.footer-copyright img {
-  width: 36px;
-  height: 36px;
-}
-
 .copyright-text {
   color: var(--gray);
   font-family: var(--times-new-roman);
-  font-size: var(--font_18);
+  font-size: var(--font_24);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
