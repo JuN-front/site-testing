@@ -65,6 +65,7 @@
   align-items: flex-start;
   gap: 10px;
   align-self: stretch;
+  position: relative;
 }
 
 .head-image-container img {
