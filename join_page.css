@@ -165,9 +165,8 @@
 
 .join-flow-content {
   align-items: flex-end;
-  margin-left: 46px;
+  padding-left: 46px;
   border-left: solid 1px var(--gray);
-  align-self: stretch;
 }
 
 .join-flow-details {
@@ -199,10 +198,16 @@
   align-items: center;
   gap: 10px;
   border-radius: 18px;
-  background-color: var(--purple_Kimberly);
+  background: var(--purple_Kimberly);
+}
+
+.step-number {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
   color: var(--ivory);
   font-family: var(--ubuntu);
-  font-size: 20px;
+  font-size: var(--font_20);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
