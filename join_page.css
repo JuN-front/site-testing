@@ -417,11 +417,9 @@
 }
 
 .background-logo {
-  width: 835.001px;
-  height: 231.653px;
   position: absolute;
-  right: 41.001px;
-  bottom: 34.347px;
+  right: 34px;
+  bottom: 34px;
 }
 
 .background-logo img {
