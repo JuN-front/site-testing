@@ -67,7 +67,7 @@
   align-self: stretch;
 }
 
-.head-image img {
+.head-image-container img {
   width: 100%;
   height: 591px;
   align-self: stretch;
