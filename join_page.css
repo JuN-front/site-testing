@@ -21,7 +21,6 @@
 }
 
 .join-flow-container {
-  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -97,13 +96,14 @@
 }
 
 .join-condition-block {
+  width: 609px;
   display: flex;
   padding: 24px 36px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
   border-radius: 12px;
-  background-color: var(--shinonome);
+  background: var(--shinonome);
 }
 
 .condition-title {
@@ -154,19 +154,14 @@
 }
 
 .join-flow-content {
-  display: flex;
-  width: 709px;
   align-items: flex-end;
   gap: 46px;
-}
-
-.join-flow-details-1 {
   border-left: solid 1px var(--gray);
   flex-shrink: 0;
   align-self: stretch;
 }
 
-.join-flow-details2 {
+.join-flow-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
