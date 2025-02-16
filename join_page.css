@@ -178,7 +178,6 @@
 
 .join-flow-block {
   display: flex;
-  width: 677px;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
@@ -186,7 +185,7 @@
 
 .join-flow-title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
 }
 
@@ -196,7 +195,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 18px;
   background: var(--purple_Kimberly);
 }
