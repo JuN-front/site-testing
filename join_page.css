@@ -21,12 +21,12 @@
 }
 
 .join-flow-container {
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
 
 .page-header {
-  width: 1440px;
   display: flex;
   padding: 24px 32px;
   justify-content: space-between;
@@ -67,7 +67,8 @@
   align-self: stretch;
 }
 
-.head-image {
+.head-image img {
+  width: 100%;
   height: 591px;
   align-self: stretch;
 }
