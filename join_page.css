@@ -21,7 +21,7 @@
 }
 
 .join-flow-container {
-  display: flex;
+  width: 1440px;
   flex-direction: column;
   align-items: center;
 }
