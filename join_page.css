@@ -164,7 +164,6 @@
   align-items: flex-end;
   gap: 46px;
   border-left: solid 1px var(--gray);
-  flex-shrink: 0;
   align-self: stretch;
 }
 
