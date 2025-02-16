@@ -6,6 +6,7 @@
   --purple_Kimberly: #6b5b7d;
 
   --font_70: 70px;
+  --font_60: 60px;
   --font_48: 48px;
   --font_32: 32px;
   --font_24: 24px;
@@ -273,7 +274,7 @@
   color: var(--ivory);
   text-align: center;
   font-family: var(--noto);
-  font-size: var(--font_48);
+  font-size: var(--font_60);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -303,6 +304,7 @@
   display: flex;
   align-items: flex-end;
   z-index: 10;
+  gap: 40px;
 }
 
 .event-text-frame {
@@ -381,7 +383,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
@@ -408,19 +410,20 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_14);
+  font-size: var(--font_18);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .background-logo {
-  flex-direction: row;
+  width: 835.001px;
+  height: 231.653px;
+  position: absolute;
+  right: -41.001px;
+  bottom: 34.347px;
 }
 
 .background-logo img {
   opacity: 0.2;
-  position: absolute;
-  right: -41.001px;
-  bottom: 34.347px;
 }
