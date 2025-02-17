@@ -39,6 +39,9 @@
 
 .will-logo {
   flex-shrink: 0;
+}
+
+.will-logo img {
   width: 150px;
   height: 75px;
 }
