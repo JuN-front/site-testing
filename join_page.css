@@ -9,6 +9,7 @@
   --font_60: 60px;
   --font_48: 48px;
   --font_32: 32px;
+  --font_28: 28px;
   --font_24: 24px;
   --font_22: 22px;
   --font_20: 20px;
@@ -38,19 +39,19 @@
 
 .will-logo {
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 150px;
+  height: 75px;
 }
 
 .link-box {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 35px;
 }
 
 .text-link {
   color: var(--gray);
-  font-size: var(--font_20);
+  font-size: var(--font_28);
   font-family: var(--noto);
   font-style: normal;
   font-weight: 400;
@@ -475,7 +476,8 @@
 .footer-logo {
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  display: flex;
 }
 
 .footer-copyright {
@@ -487,10 +489,15 @@
   align-self: stretch;
 }
 
+.footer-copyright img {
+  width: 32px;
+  height: 32px;
+}
+
 .copyright-text {
   color: var(--gray);
   font-family: var(--times-new-roman);
-  font-size: var(--font_24);
+  font-size: var(--font_32);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
