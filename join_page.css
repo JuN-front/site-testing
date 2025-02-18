@@ -304,7 +304,7 @@
   display: flex;
   align-items: flex-end;
   z-index: 10;
-  gap: 40px;
+  gap: 35px;
 }
 
 .event-text-frame {
@@ -338,7 +338,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_14);
+  font-size: var(--font_16);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
