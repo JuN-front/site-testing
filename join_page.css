@@ -8,6 +8,7 @@
   --font_70: 70px;
   --font_60: 60px;
   --font_48: 48px;
+  --font_36: 36px;
   --font_32: 32px;
   --font_28: 28px;
   --font_24: 24px;
@@ -16,6 +17,7 @@
   --font_18: 18px;
   --font_16: 16px;
   --font_14: 14px;
+  --font_12: 12px;
 
   --noto: "Noto Sans JP", sans-serif;
   --anton: "Anton", serif;
@@ -45,6 +47,10 @@
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 .text-link {
@@ -108,7 +114,7 @@
 }
 
 .join-condition-block {
-  width: 609px;
+  width: 100%;
   display: flex;
   padding: 24px 36px;
   flex-direction: column;
@@ -122,7 +128,7 @@
   font-family: var(--noto);
   font-size: var(--font_32);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   color: var(--ivory);
   overflow: hidden;
@@ -163,6 +169,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  color: var(--shinonome);
 }
 
 .join-flow-content {
@@ -236,7 +243,7 @@
   align-items: flex-start;
   color: var(--purple_Kimberly);
   font-family: var(--noto);
-  font-size: 18px;
+  font-size: var(--font_18);
   font-style: normal;
   font-weight: 500;
   line-height: 199.8%;
@@ -500,4 +507,92 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.72px;
+}
+
+@media (max-width: 900px) {
+  .head-image-container img {
+    height: 249px;
+  }
+
+  .head-letter {
+    right: 11px;
+    bottom: 33px;
+    font-size: var(--font_40);
+  }
+
+  .join-conditions-container {
+    padding-top: 50px;
+    flex-direction: column;
+  }
+
+  .join-conditions {
+    flex-direction: column;
+    align-self: unset;
+  }
+
+  .join-condition-block {
+    gap: 16px;
+  }
+
+  .condition-title {
+    font-size: var(--font_24);
+  }
+
+  .condition-detail {
+    font-size: var(--font_16);
+    line-height: 150%;
+  }
+
+  .detail-mini {
+    font-size: var(--font_12);
+    line-height: 150%;
+  }
+
+  .join-title {
+    font-size: var(--font_36);
+  }
+
+  .join-flow-content {
+    display: flex;
+    gap: 46px;
+    padding: 0px 28px;
+    align-self: stretch;
+  }
+
+  .join-flow-details {
+    flex: 1 0 0;
+  }
+
+  .join-flow-block {
+    align-self: stretch;
+  }
+
+  .step {
+    gap: 10px;
+  }
+
+  .step-explanation {
+    flex: 0 0 0;
+  }
+
+  .event-section {
+    padding: 100px 42px 160px 42px;
+  }
+
+  .event-entire-title {
+    font-size: var(--font_36);
+  }
+
+  .event-container {
+    align-self: stretch;
+  }
+
+  .event-block {
+    /*frame446*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
 }
