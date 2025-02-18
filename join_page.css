@@ -138,10 +138,10 @@
   color: var(--ivory);
   overflow: hidden;
   text-overflow: ellipsis;
+}
 
-  .detail-mini {
-    font-size: var(--font_16);
-  }
+.detail-mini {
+  font-size: var(--font_16);
 }
 
 .join-flow-section {
@@ -318,7 +318,7 @@
   display: flex;
   padding: 0px 12px 8px 12px;
   align-items: flex-end;
-  gap: 16px;
+  gap: 35px;
   border-bottom: 1px solid var(--ivory);
 }
 
@@ -327,7 +327,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_24);
+  font-size: var(--font_20);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -338,7 +338,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_16);
+  font-size: var(--font_14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -360,7 +360,7 @@
 .number {
   color: var(--ivory);
   font-family: var(--jomolhari);
-  font-size: var(--font_22);
+  font-size: var(--font_20);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -369,13 +369,13 @@
 .schedule {
   color: var(--ivory);
   font-family: var(--jomolhari);
-  font-size: var(--font_22);
+  font-size: var(--font_20);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.schedule.day {
+.day {
   font-size: var(--font_16);
 }
 
@@ -410,7 +410,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_18);
+  font-size: var(--font_14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
