@@ -327,7 +327,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_32);
+  font-size: var(--font_24);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -338,7 +338,7 @@
   color: var(--ivory);
   text-overflow: ellipsis;
   font-family: var(--noto);
-  font-size: var(--font_16);
+  font-size: var(--font_14);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -360,7 +360,7 @@
 .number {
   color: var(--ivory);
   font-family: var(--jomolhari);
-  font-size: var(--font_32);
+  font-size: var(--font_22);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -369,14 +369,14 @@
 .schedule {
   color: var(--ivory);
   font-family: var(--jomolhari);
-  font-size: var(--font_32);
+  font-size: var(--font_22);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 .schedule.day {
-  font-size: var(--font_20);
+  font-size: var(--font_16);
 }
 
 .application-button {
