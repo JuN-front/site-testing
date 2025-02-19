@@ -49,7 +49,11 @@
   gap: 30px;
 }
 
-.mobile-nav {
+.nav {
+  display: none;
+}
+
+.button {
   display: none;
 }
 
