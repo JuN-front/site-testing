@@ -1,6 +1,6 @@
 $(function () {
-  $("#hamburger").on("click", function () {
-    $("#hamburger").toggleClass("open");
-    $("#header-menu").slideToggle();
+  // ハンバーガーメニューをクリックするとactiveクラスが付与される
+  $(".hamburger").click(function () {
+    $(this).toggleClass("active");
   });
 });
