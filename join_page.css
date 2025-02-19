@@ -43,18 +43,19 @@
   flex-shrink: 0;
 }
 
-.hamburger {
-  display: none;
-}
-
-.header-nav {
-  display: none;
-}
-
 .link-box {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+ul {
+  display: none;
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
 }
 
 .text-link {
@@ -517,42 +518,57 @@
 }
 
 @media (max-width: 900px) {
+  .header-nav {
+    position: fixed;
+    top: 24px;
+    width: 100%;
+    z-index: 10;
+  }
+
   .hamburger {
-    display: flex;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    cursor: pointer;
     width: 32px;
-    height: 36px;
+    height: 24px;
+    z-index: 10;
   }
-
   .hamburger span {
-    width: 32px;
-    height: 8px;
-    border-radius: 8px;
-    gap: 4px;
-    background-color: black;
+    /*3本の線を作る*/
+    transition: all 0.3s;
+    position: absolute;
+    height: 2px;
+    background-color: #333;
+    width: 100%;
+    z-index: 10;
   }
-
-  .hamburger.is-active span:nth-of-type(1) {
-    top: 0;
-    transform: translateX(-50%) rotate(225deg);
+  .hamburger span:nth-of-type(1) {
+    /*上の線の位置*/
+    top: 4px;
   }
-  .hamburger.is-active span:nth-of-type(2) {
+  .hamburger span:nth-of-type(2) {
+    /*真ん中の線の位置*/
+    top: 12px;
+  }
+  .hamburger span:nth-of-type(3) {
+    /*下の線の位置*/
+    top: 20px;
+  }
+  .hamburger.open span:nth-of-type(1) {
+    /*openのとき、上の線を右斜めにする*/
+    top: 10px;
+    transform: translateY(6px) rotate(-33deg);
+  }
+  .hamburger.open span:nth-of-type(2) {
+    /*真ん中の線を消す*/
     opacity: 0;
   }
-  .hamburger.is-active span:nth-of-type(3) {
-    top: -4px;
-    transform: translateX(-50%) rotate(-225deg);
+  .hamburger.open span:nth-of-type(3) {
+    /*下の線を左斜めにする*/
+    top: 22px;
+    transform: translateY(-6px) rotate(33deg);
   }
-
-  /* ハンバーガーメニューが開いた時 */
-  .header-nav.is-active {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: #f5eded;
-    opacity: 1;
-    transition: 1s;
-  }
-
   .link-box {
     display: none;
   }

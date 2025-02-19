@@ -26,13 +26,8 @@
         <a class="will-logo" href=""
           ><img src="./images/logo.svg" alt="TOPページへ戻る"
         /></a>
-        <button class="hamburger" aria-label="menu button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="header-nav nav" id="js-nav">
-          <ul>
+        <nav class="header-nav" id="js-nav">
+          <ul id="header-menu">
             <li><a href="" alt="Top">Top</a></li>
             <li><a href="" alt="About Us">About Us</a></li>
             <li><a href="" alt="ゼミについて">ゼミについて</a></li>
@@ -42,6 +37,11 @@
             <li><a href="" alt="FAQ・お問い合わせ">FAQ・お問い合わせ</a></li>
           </ul>
         </nav>
+        <div id="hamburger" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="link-box">
           <a class="text-link" href="" alt="Top">Top</a>
           <a class="text-link" href="" alt="About Us">About Us</a>
@@ -248,5 +248,8 @@
         </div>
       </footer>
     </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
