@@ -311,7 +311,7 @@
   display: flex;
   align-items: flex-end;
   z-index: 10;
-  gap: 35px;
+  gap: 36px;
 }
 
 .event-text-frame {
@@ -588,11 +588,101 @@
   }
 
   .event-block {
-    /*frame446*/
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 24px;
     align-self: stretch;
+  }
+
+  .event-block img {
+    align-self: stretch;
+    height: 220px;
+  }
+
+  .event-entire-frame {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  .event-title-frame {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .event-title {
+    font-size: var(--font_32);
+  }
+
+  .event-subtitle {
+    font-size: var(--font_16);
+  }
+
+  .number {
+    font-size: var(--font_32);
+  }
+
+  .schedule {
+    font-size: var(--font_24);
+  }
+
+  .day {
+    font-size: var(--font_24);
+  }
+
+  .application-button {
+    align-items: flex-start;
+  }
+
+  .apply-button {
+    color: var(--blue_Kashmir);
+  }
+
+  .background-logo {
+    right: -34.001px;
+    bottom: -50.309px;
+  }
+
+  .footer-top {
+    padding: 40px 0px 20px 0px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    gap: 20px;
+  }
+
+  .footer-sm-logo {
+    gap: 18px;
+    width: 295px;
+    height: 80px;
+  }
+
+  .x-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instagram-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-copyright {
+    gap: 8px;
+  }
+
+  .footer-copyright img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .copyright-text {
+    font-size: var(--font_18);
   }
 }
