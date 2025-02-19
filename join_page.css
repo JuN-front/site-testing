@@ -587,7 +587,6 @@
   }
 
   .event-container {
-    align-self: stretch;
     align-items: center;
   }
 
@@ -607,7 +606,7 @@
   .event-entire-frame {
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
     align-self: stretch;
   }
 
@@ -643,19 +642,18 @@
   }
 
   .background-logo {
-    right: -34.001px;
-    bottom: -50.309px;
+    right: 20px;
+    bottom: 10px;
     white-space: nowrap;
   }
 
   .background-logo img {
-    width: 80%;
-    height: 80%;
+    height: 90px;
   }
 
-  .background-logo .footer-top {
+  .footer-top {
     padding: 40px 0px 20px 0px;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 16px;
   }
 
@@ -665,8 +663,6 @@
 
   .footer-sm-logo {
     gap: 18px;
-    width: 295px;
-    height: 80px;
   }
 
   .x-logo img {
