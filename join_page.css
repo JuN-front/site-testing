@@ -8,6 +8,7 @@
   --font_70: 70px;
   --font_60: 60px;
   --font_48: 48px;
+  --font_40: 40px;
   --font_36: 36px;
   --font_32: 32px;
   --font_28: 28px;
@@ -586,12 +587,12 @@ sp-nav(ナビ)
     padding-top: 100px;
     list-style: none;
   }
+
   .sp-nav a {
     text-decoration: none;
-    padding-bottom: 30px;
     color: var(--ivory);
     font-family: var(--noto);
-    font-size: var(--font_36);
+    font-size: var(--font_40);
   }
 
   .sp-nav a:hover {
