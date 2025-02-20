@@ -563,6 +563,7 @@
   }
 
   .hamburger.active .sm {
+    display: flex;
     top: 60px;
     left: 0px;
     z-index: 10;
