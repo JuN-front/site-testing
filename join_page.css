@@ -582,10 +582,10 @@ sp-nav(ナビ)
   }
 
   .sp-nav ul {
-    align-items: center;
+    padding-top: 100px;
     list-style: none;
   }
-  .sp-nav li {
+  .sp-nav a {
     text-decoration: none;
     column-gap: 30px;
     color: var(--gray);
@@ -593,7 +593,7 @@ sp-nav(ナビ)
     font-size: var(--font_32);
   }
 
-  .sp-nav li:hover {
+  .sp-nav a:hover {
     text-decoration: underline;
   }
   /*ハンバーガーがクリックされたら右からスライド*/
