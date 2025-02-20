@@ -515,7 +515,6 @@
 @media (max-width: 900px) {
   .nav-wrapper {
     display: flex;
-    position: relative;
   }
 
   /* 
@@ -523,8 +522,8 @@ hamburger(ハンバーガーアイコン)
 =================================== */
   .hamburger {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 30px;
+    top: 33px;
     width: 50px;
     height: 40px;
     cursor: pointer;
@@ -576,12 +575,27 @@ sp-nav(ナビ)
     top: 0;
     width: 70%; /* 出てくるスライドメニューの幅 */
     height: 100vh;
-    background-color: #fff;
+    background-color: var(--blue_Kashmir);
     transition: all 0.5s;
     z-index: 200;
     overflow-y: auto; /* メニューが多くなったらスクロールできるように */
   }
 
+  .sp-nav ul {
+    align-items: center;
+    list-style: none;
+  }
+  .sp-nav li {
+    text-decoration: none;
+    column-gap: 30px;
+    color: var(--gray);
+    font-family: var(--noto);
+    font-size: var(--font_32);
+  }
+
+  .sp-nav li:hover {
+    text-decoration: underline;
+  }
   /*ハンバーガーがクリックされたら右からスライド*/
   .open .sp-nav {
     right: 0;
@@ -622,7 +636,7 @@ black-bg(ハンバーガーメニュー解除用bg)
   .head-letter {
     right: 11px;
     bottom: 33px;
-    font-size: var(--font_60);
+    font-size: var(--font_48);
   }
 
   .join-conditions-container {
