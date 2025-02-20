@@ -585,7 +585,8 @@ sp-nav(ナビ)
   .sp-nav ul {
     padding-top: 100px;
     list-style: none;
-    padding-left: 50px;
+    text-align: center;
+    padding-left: 0;
   }
 
   .sp-nav ul li {
@@ -599,16 +600,14 @@ sp-nav(ナビ)
     font-size: var(--font_32);
   }
 
+  .link-menu:hover {
+    border-bottom: 1px solid var(--ivory);
+  }
+
   /*ハンバーガーがクリックされたら右からスライド*/
   .open .sp-nav {
     right: 0;
   }
-
-  .open .sp-nav:hover {
-    text-decoration: underline;
-    border-bottom: solid 2px var(--ivory);
-  }
-
   /* 
 black-bg(ハンバーガーメニュー解除用bg)
 =================================== */
