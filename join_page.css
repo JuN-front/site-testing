@@ -587,7 +587,7 @@ sp-nav(ナビ)
   }
   .sp-nav a {
     text-decoration: none;
-    column-gap: 30px;
+    padding-bottom: 30px;
     color: var(--gray);
     font-family: var(--noto);
     font-size: var(--font_32);
