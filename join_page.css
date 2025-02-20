@@ -578,7 +578,7 @@ sp-nav(ナビ)
     height: 100vh;
     background-color: var(--blue_Kashmir);
     transition: all 0.5s;
-    z-index: 200;
+    z-index: 100;
     align-items: center;
     overflow-y: auto; /* メニューが多くなったらスクロールできるように */
   }
