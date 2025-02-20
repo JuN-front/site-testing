@@ -49,7 +49,7 @@
   gap: 30px;
 }
 
-.sm {
+.nav-wrapper {
   display: none;
 }
 
@@ -513,76 +513,102 @@
 }
 
 @media (max-width: 900px) {
-  .hamburger {
-    background: transparent;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hamburger span {
+  .nav-wrapper {
     display: flex;
     position: relative;
-    width: 100%;
-    height: 10%; /* ハンバーガーメニューのバーの太さ設定 */
-    background: var(--gray); /* 三本線の時の色 */
-    transition: all 0.3s; /* 三本線の状態からXになるまでの時間設定 */
   }
 
-  .top-bar {
-    top: 0px;
+  /* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+  .hamburger {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
   }
 
-  .middle-bar {
-    top: 35%;
-    transform: translateY(-50%);
+  .hamburger__line {
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    right: 0;
+    background-color: #000;
+    transition: all 0.5s;
   }
 
-  .bottom-bar {
-    bottom: 0px;
+  .hamburger__line--1 {
+    top: 1px;
   }
 
-  .hamburger.active .top-bar {
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--gray); /* Xの時の色 */
-    transform: rotate(405deg); /* 回転設定 45 or 765に変更可 */
+  .hamburger__line--2 {
+    top: 18px;
   }
-  /* active付与時 ミドルバー */
-  .hamburger.active .bottom-bar {
+
+  .hamburger__line--3 {
+    top: 36px;
+  }
+
+  /*ハンバーガーがクリックされたら*/
+  .open .hamburger__line--1 {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+
+  .open .hamburger__line--2 {
     opacity: 0;
   }
-  /* active付与時 ボトムバー */
-  .hamburger.active .middle-bar {
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--gray); /* Xの時の色 */
-    transform: rotate(-405deg); /* 回転設定 -45 or -765に変更可 */
+
+  .open .hamburger__line--3 {
+    transform: rotate(45deg);
+    top: 11px;
   }
 
-  .hamburger.active .sm {
-    display: flex;
-    top: 60px;
-    left: 0px;
-    z-index: 10;
-    width: 100%;
-    background-color: navy;
+  /* 
+sp-nav(ナビ)
+=================================== */
+  .sp-nav {
+    position: fixed;
+    right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+    top: 0;
+    width: 70%; /* 出てくるスライドメニューの幅 */
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
   }
 
-  .hamburger.active .sm ul {
-    flex-direction: column;
+  /*ハンバーガーがクリックされたら右からスライド*/
+  .open .sp-nav {
+    right: 0;
   }
 
-  .hamburger.active .sm a {
-    text-align: center;
-    color: var(--ivory);
-    text-decoration: none;
+  /* 
+black-bg(ハンバーガーメニュー解除用bg)
+=================================== */
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 100;
   }
 
-  .sm a:hover {
-    text-decoration: underline;
+  /*ハンバーガーメニューが開いたら表示*/
+  .open .black-bg {
+    opacity: 0.3;
+    visibility: visible;
   }
 
   .link-box {
