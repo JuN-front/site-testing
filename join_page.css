@@ -579,23 +579,27 @@ sp-nav(ナビ)
     background-color: var(--blue_Kashmir);
     transition: all 0.5s;
     z-index: 100;
-    align-items: center;
     overflow-y: auto; /* メニューが多くなったらスクロールできるように */
   }
 
   .sp-nav ul {
     padding-top: 100px;
     list-style: none;
+    align-items: center;
   }
 
-  .sp-nav a {
+  .sp-nav ul li {
+    padding: 0px 20px;
+  }
+
+  .link-menu {
     text-decoration: none;
     color: var(--ivory);
     font-family: var(--noto);
     font-size: var(--font_40);
   }
 
-  .sp-nav a:hover {
+  .link-menu:hover {
     text-decoration: underline;
   }
   /*ハンバーガーがクリックされたら右からスライド*/
