@@ -116,6 +116,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  color: var(--shinonome);
 }
 
 .contact-list {
@@ -155,6 +156,11 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+}
+
+.follow-x img {
+  width: 49px;
+  height: 44px;
 }
 
 .follow-instagram {
