@@ -469,11 +469,6 @@ black-bg(ハンバーガーメニュー解除用bg)
     padding: 100px 20px;
   }
 
-  .faq-block-container {
-    align-items: center;
-    display: flex;
-  }
-
   .faq-block {
     align-self: stretch;
     align-items: flex-start;
