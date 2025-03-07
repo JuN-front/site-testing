@@ -472,6 +472,7 @@ black-bg(ハンバーガーメニュー解除用bg)
   .faq-block {
     align-self: stretch;
     align-items: flex-start;
+    padding-left: 50px;
   }
 
   .footer-top {
