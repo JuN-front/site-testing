@@ -225,11 +225,11 @@
   gap: 13px;
 }
 
-.faq-title {
+.faq-block-title {
   color: var(--ivory);
   text-align: center;
   font-family: var(--noto);
-  font-size: var(--font_48);
+  font-size: var(--font_20);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
