@@ -416,11 +416,11 @@ sp-nav(ナビ)
     font-family: var(--noto);
     font-size: var(--font_32);
     text-decoration: none;
-  }
-
-  .sp-nav a:hover {
     cursor: pointer;
-    text-decoration: underline var(--ivory);
+
+    a:hover {
+      text-decoration: underline var(--ivory);
+    }
   }
 
   /*ハンバーガーがクリックされたら右からスライド*/
