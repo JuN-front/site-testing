@@ -418,6 +418,11 @@ sp-nav(ナビ)
     text-decoration: none;
   }
 
+  .sp-nav a:hover {
+    cursor: pointer;
+    text-decoration: underline var(--ivory);
+  }
+
   /*ハンバーガーがクリックされたら右からスライド*/
   .open .sp-nav {
     right: 0;
