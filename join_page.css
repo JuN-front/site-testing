@@ -115,7 +115,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: var(--black);
+  color: var(--gray);
   text-align: center;
   font-family: var(--noto);
   font-size: var(--font_48);
@@ -141,8 +141,7 @@
 }
 
 .seminar-entry {
-  display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-left: 46px;
   border-left: 1px solid var(--black);
   width: 60%;
@@ -456,6 +455,53 @@ black-bg(ハンバーガーメニュー解除用bg)
     right: 11px;
     bottom: 33px;
     font-size: var(--font_48);
+  }
+
+  .about-seminar {
+    align-self: stretch;
+    padding: 56px 40px;
+    width: 100%;
+  }
+
+  .about-seminar-title {
+    font-size: var(--font_32);
+    font-weight: 500;
+  }
+
+  .about-seminar-description {
+    font-size: var(--font_24);
+  }
+
+  .seminar-entry {
+    align-items: flex-end;
+    width: 90%;
+    flex-direction: column;
+    gap: 56px;
+    padding: 32px 0px;
+    padding-left: 28px;
+  }
+
+  .seminar-entry-content {
+    gap: 32px;
+    flex: 1 0 0;
+  }
+
+  .entry-step-block {
+    align-self: stretch;
+  }
+
+  .entry-step-description {
+    line-height: 150%;
+    font-size: var(--font-16);
+  }
+
+  .entry-step-text {
+    padding-bottom: 20px;
+    align-self: stretch;
+  }
+
+  .button-text {
+    font-size: var(--font-16);
   }
 
   .footer-top {
