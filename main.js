@@ -24,22 +24,28 @@ const screen2 = document.querySelector(".event-section-2");
 const screen3 = document.querySelector(".event-section-3");
 
 button1.addEventListener("click", function () {
-  button2.classList.remove("active");
-  button3.classList.remove("active");
+  screen1.classList.remove("active");
   screen2.classList.remove("active");
   screen3.classList.remove("active");
+  button1.classList.remove("active");
+  button2.classList.remove("active");
+  button3.classList.remove("active");
 });
 
 button2.addEventListener("click", function () {
-  button1.classList.remove("active");
-  button3.classList.remove("active");
-  screen1.classList.remove("active");
+  screen1.classList.add("active");
+  screen2.classList.add("active");
   screen3.classList.remove("active");
+  button1.classList.add("active");
+  button2.classList.add("active");
+  button3.classList.remove("active");
 });
 
 button3.addEventListener("click", function () {
-  button1.classList.remove("active");
-  button2.classList.remove("active");
-  screen1.classList.remove("active");
+  screen1.classList.add("active");
   screen2.classList.remove("active");
+  screen3.classList.add("active");
+  button1.classList.add("active");
+  button2.classList.remove("active");
+  button3.classList.add("active");
 });
