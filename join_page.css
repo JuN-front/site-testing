@@ -459,9 +459,7 @@ black-bg(ハンバーガーメニュー解除用bg)
   }
 
   .about-seminar {
-    align-self: stretch;
     padding: 56px 40px;
-    width: 100%;
   }
 
   .about-seminar-title {
@@ -499,6 +497,13 @@ black-bg(ハンバーガーメニュー解除用bg)
   .entry-step-text {
     padding-bottom: 20px;
     align-self: stretch;
+    justify-content: flex-start;
+    padding: 0px 24px 20px 0px;
+  }
+
+  .seminar-button {
+    padding-top: 56px;
+    padding-bottom: 32px;
   }
 
   .button-text {
