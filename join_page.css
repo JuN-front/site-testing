@@ -107,36 +107,17 @@
   background: var(--white);
 }
 
-.event-section-1 {
+.event-section.active {
   display: flex;
   padding: 100px 110px 30px 110px;
   flex-direction: column;
   align-items: center;
   gap: 80px;
-  opacity: 1;
-  pointer-events: auto;
   background-color: #50648c;
 }
 
-.event-section-2,
-.event-section-3 {
+.event-section {
   display: none;
-}
-
-.event-section-1.active {
-  display: none;
-}
-
-.event-section-2.active,
-.event-section-3.active {
-  display: flex;
-  padding: 100px 110px 30px 110px;
-  flex-direction: column;
-  align-items: center;
-  gap: 80px;
-  opacity: 0;
-  pointer-events: none;
-  background-color: #50648c;
 }
 
 .event-list {
@@ -213,7 +194,7 @@
   gap: 20px;
 }
 
-.button-1 {
+.button.active {
   display: flex;
   width: 44px;
   height: 44px;
@@ -229,8 +210,7 @@
   cursor: pointer;
 }
 
-.button-2,
-.button-3 {
+.button {
   display: flex;
   width: 44px;
   height: 44px;
@@ -243,18 +223,6 @@
   border: 1px solid var(--ivory-50);
   color: var(--ivory-50);
   cursor: pointer;
-}
-
-#button-1.active {
-  border: 1px solid var(--ivory-50);
-  color: var(--ivory-50);
-}
-
-#button-2.active,
-#button-3.active {
-  border: 1px solid var(--ivory);
-  background-color: var(--ivory);
-  color: var(--blue_Kashmir);
 }
 
 .footer {
