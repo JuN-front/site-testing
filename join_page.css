@@ -426,7 +426,7 @@ black-bg(ハンバーガーメニュー解除用bg)
   }
 
   .head-image-container img {
-    height: 249px;
+    height: 400px;
   }
 
   .head-letter {
@@ -446,11 +446,17 @@ black-bg(ハンバーガーメニュー解除用bg)
   .event-list {
     align-items: center;
     gap: 24px;
+    width: 80%;
   }
 
   .event-block {
     flex-direction: column;
     align-items: center;
+  }
+
+  .event-content {
+    align-items: center;
+    width: 80%;
   }
 
   .footer-top {
