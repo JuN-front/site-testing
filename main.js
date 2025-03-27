@@ -11,11 +11,11 @@ window.onload = function () {
   });
 };
 
-const button1 = document.getElementById("1st-page");
+const button1 = document.getElementById("button-1");
 
-const button2 = document.getElementById("2nd-page");
+const button2 = document.getElementById("button-2");
 
-const button3 = document.getElementById("3rd-page");
+const button3 = document.getElementById("button-3");
 
 const screen1 = document.querySelector(".event-section-1");
 
