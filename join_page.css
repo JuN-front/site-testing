@@ -224,7 +224,8 @@
   gap: 10px;
   border-radius: 5px;
   border: 1px solid var(--ivory);
-  color: var(--ivory);
+  background-color: var(--ivory);
+  color: var(--blue_Kashmir);
   cursor: pointer;
 }
 
@@ -253,6 +254,7 @@
 #button-3.active {
   border: 1px solid var(--ivory);
   background-color: var(--ivory);
+  color: var(--blue_Kashmir);
 }
 
 .footer {
