@@ -116,18 +116,19 @@
   background-color: #50648c;
 }
 
-.event-list-a,
-.event-list-b.active,
-.event-list-c.active {
+.event-list-a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 56px;
 }
 
-.event-list-a.active,
 .event-list-b,
-.event-list.c {
+.event-list-c {
+  display: none;
+}
+
+.event-list-a.active {
   display: none;
 }
 
