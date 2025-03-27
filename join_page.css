@@ -213,7 +213,7 @@
   gap: 20px;
 }
 
-#button-1 {
+.button-1 {
   display: flex;
   width: 44px;
   height: 44px;
@@ -228,8 +228,8 @@
   cursor: pointer;
 }
 
-#button-2,
-#button-3 {
+.button-2,
+.button-3 {
   display: flex;
   width: 44px;
   height: 44px;
