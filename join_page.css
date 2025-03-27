@@ -107,9 +107,7 @@
   background: var(--white);
 }
 
-.event-section-a,
-.event-section-b.active,
-.event-section-c.active {
+.event-section {
   display: flex;
   padding: 100px 110px 30px 110px;
   flex-direction: column;
@@ -118,17 +116,19 @@
   background-color: #50648c;
 }
 
-.event-section-a.active,
-.event-section-b,
-.event-section-c {
-  display: none;
-}
-
-.event-list {
+.event-list-a,
+.event-list-b.active,
+.event-list-c.active {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 56px;
+}
+
+.event-list-a.active,
+.event-list-b,
+.event-list.c {
+  display: none;
 }
 
 .event-block {

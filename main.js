@@ -21,13 +21,13 @@ const buttonB = document.getElementById(".b_btn");
 const buttonC = document.getElementById(".c_btn");
 
 // A画面
-const screenA = document.querySelector(".event-section-a");
+const screenA = document.querySelector(".event-list-a");
 
 // B画面
-const screenB = document.querySelector(".event-section-b");
+const screenB = document.querySelector(".event-list-b");
 
 // C画面
-const screenC = document.querySelector(".event-section-c");
+const screenC = document.querySelector(".event-list-c");
 
 buttonA.addEventListener("click", function () {
   // 1ボタンをクリックした時
