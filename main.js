@@ -12,13 +12,13 @@ window.onload = function () {
 };
 
 // 1ボタン
-const buttonA = document.getElementById("a_btn");
+const buttonA = document.getElementById(".a_btn");
 
 // 2ボタン
-const buttonB = document.getElementById("b_btn");
+const buttonB = document.getElementById(".b_btn");
 
 // 3ボタン
-const buttonC = document.getElementById("c_btn");
+const buttonC = document.getElementById(".c_btn");
 
 // A画面
 const screenA = document.querySelector(".event-section-a");

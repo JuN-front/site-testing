@@ -198,9 +198,9 @@
   gap: 20px;
 }
 
-#a_btn,
-#b_btn.active,
-#c_btn.active {
+.a_btn,
+.a_btn.active,
+.c_btn.active {
   display: flex;
   width: 44px;
   height: 44px;
@@ -216,9 +216,9 @@
   cursor: pointer;
 }
 
-#a_btn.active,
-#b_btn,
-#c_btn {
+.a_btn.active,
+.b_btn,
+.c_btn {
   display: flex;
   width: 44px;
   height: 44px;
