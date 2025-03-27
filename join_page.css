@@ -107,7 +107,9 @@
   background: var(--white);
 }
 
-.tab-panel.active {
+.event-section-a,
+.event-section-b.active,
+.event-section-c.active {
   display: flex;
   padding: 100px 110px 30px 110px;
   flex-direction: column;
@@ -116,7 +118,9 @@
   background-color: #50648c;
 }
 
-.tab-panel {
+.event-section-a.active,
+.event-section-b,
+.event-section-c {
   display: none;
 }
 
@@ -194,7 +198,9 @@
   gap: 20px;
 }
 
-.tab-item.active {
+#a_btn,
+#b_btn.active,
+#c_btn.active {
   display: flex;
   width: 44px;
   height: 44px;
@@ -210,7 +216,9 @@
   cursor: pointer;
 }
 
-.tab-item {
+#a_btn.active,
+#b_btn,
+#c_btn {
   display: flex;
   width: 44px;
   height: 44px;

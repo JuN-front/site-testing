@@ -11,26 +11,50 @@ window.onload = function () {
   });
 };
 
-// タブの見出し（tab-item）を取得
-const tabItems = document.querySelectorAll(".tab-item");
+// 1ボタン
+const buttonA = document.getElementById("a_btn");
 
-tabItems.forEach((tabItem) => {
-  tabItem.addEventListener("click", () => {
-    // すべてのタブを非アクティブにする
-    tabItems.forEach((t) => {
-      t.classList.remove("active");
-    });
-    // すべてのコンテンツを非表示にする
-    const tabPanels = document.querySelectorAll(".tab-panel");
-    tabPanels.forEach((tabPanel) => {
-      tabPanel.classList.remove("active");
-    });
+// 2ボタン
+const buttonB = document.getElementById("b_btn");
 
-    // クリックされたタブをアクティブにする
-    tabItem.classList.add("active");
+// 3ボタン
+const buttonC = document.getElementById("c_btn");
 
-    // 対応するコンテンツを表示
-    const tabIndex = Array.from(tabItems).indexOf(tabItem);
-    tabPanels[tabIndex].classList.add("active");
-  });
+// A画面
+const screenA = document.querySelector(".event-section-a");
+
+// B画面
+const screenB = document.querySelector(".event-section-b");
+
+// C画面
+const screenC = document.querySelector(".event-section-c");
+
+buttonA.addEventListener("click", function () {
+  // 1ボタンをクリックした時
+  buttonA.classList.remove("active"); // 'buttonA' から 'active' が外される
+  buttonB.classList.remove("active"); // 'buttonB' から 'active' が外される
+  buttonC.classList.remove("active"); // 'buttonC'から 'active'　が外される
+  screenA.classList.remove("active"); // 'screenA' から 'active' が外される
+  screenB.classList.remove("active"); // 'screenB' から 'active' が外される
+  screenC.classList.remove("active"); // 'screenC' から 'active' が外される
+});
+
+buttonB.addEventListener("click", function () {
+  // 2ボタンをクリックした時
+  buttonA.classList.add("active"); // 'buttonA' に 'active' が追加される
+  buttonB.classList.add("active"); // 'buttonB' に 'active' が追加される
+  buttonC.classList.remove("active"); // 'buttonC' から 'active' が外される
+  screenA.classList.add("active"); // 'screenA' に 'active' が追加される
+  screenB.classList.add("active"); // 'screenB' に 'active' が追加される
+  screenC.classList.remove("active"); // 'screenC' から 'active' が外される
+});
+
+buttonC.addEventListener("click", function () {
+  // 3ボタンをクリックした時
+  buttonA.classList.add("active"); // 'buttonA' に 'active' が追加される
+  buttonB.classList.remove("active"); // 'buttonB' に 'active' が追加される
+  buttonC.classList.add("active"); // 'buttonC' から 'active' が外される
+  screenA.classList.add("active"); // 'screenA' に 'active' が追加される
+  screenB.classList.remove("active"); // 'screenB' に 'active' が追加される
+  screenC.classList.add("active"); // 'screenC' から 'active' が外される
 });
