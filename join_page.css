@@ -435,56 +435,22 @@ black-bg(ハンバーガーメニュー解除用bg)
     font-size: var(--font_48);
   }
 
-  .about-seminar {
-    padding: 56px 40px;
+  .white-space {
+    height: 0px;
   }
 
-  .about-seminar-title {
-    font-size: var(--font_32);
-    font-weight: 500;
+  .event-section {
+    padding: 100px 20px 30px 20px;
   }
 
-  .about-seminar-description {
-    font-size: var(--font_24);
+  .event-list {
+    align-items: center;
+    gap: 24px;
   }
 
-  .seminar-entry {
-    align-items: flex-end;
-    width: 90%;
+  .event-block {
     flex-direction: column;
-    gap: 56px;
-    padding: 32px 0px;
-    padding-left: 28px;
-  }
-
-  .seminar-entry-content {
-    gap: 32px;
-    flex: 1 0 0;
-  }
-
-  .entry-step-block {
-    align-self: stretch;
-  }
-
-  .entry-step-description {
-    line-height: 150%;
-    font-size: var(--font-16);
-  }
-
-  .entry-step-text {
-    padding-bottom: 20px;
-    align-self: stretch;
-    justify-content: flex-start;
-    padding: 0px 24px 20px 0px;
-  }
-
-  .seminar-button {
-    padding-top: 56px;
-    padding-bottom: 32px;
-  }
-
-  .button-text {
-    font-size: var(--font-16);
+    align-items: center;
   }
 
   .footer-top {
