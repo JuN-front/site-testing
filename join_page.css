@@ -136,7 +136,6 @@
   justify-content: center;
   align-items: flex-start;
   gap: 46px;
-  align-self: stretch;
 }
 
 .new-event-block {
@@ -304,6 +303,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  overflow: hidden;
 }
 
 .activity-title {
@@ -321,7 +321,7 @@
   align-items: center;
   gap: 48px;
   align-self: stretch;
-  animation: slide-flow 20s infinite linear 1s both;
+  animation: slide-flow 20s linear infinite;
 }
 
 .slide {
@@ -443,12 +443,12 @@
 
 .background-logo-left {
   position: absolute;
-  left: 34px;
+  left: -20px;
   bottom: 34px;
 }
 
 .background-logo-left img {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .footer {
