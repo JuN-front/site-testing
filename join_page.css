@@ -322,6 +322,7 @@
 }
 
 .slider {
+  display: flex;
   align-items: center;
   gap: 48px;
   align-self: stretch;
