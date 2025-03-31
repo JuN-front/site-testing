@@ -333,10 +333,12 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  width: calc(100vw / 2);
 }
 
 .slide img {
   aspect-ratio: 3/2;
+  border-radius: 12px;
 }
 
 @keyframes slide-flow {
