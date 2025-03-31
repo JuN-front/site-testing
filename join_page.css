@@ -318,6 +318,10 @@
 
 .slide-wrapper {
   display: flex;
+  overflow: hidden;
+}
+
+.slider {
   align-items: center;
   gap: 48px;
   align-self: stretch;
@@ -329,7 +333,6 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  width: (100vw/7);
 }
 
 .slide img {
