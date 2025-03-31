@@ -319,6 +319,7 @@
 .slide-wrapper {
   display: flex;
   overflow: hidden;
+  gap: 48px;
 }
 
 .slider {
@@ -347,7 +348,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-65.4%);
   }
 }
 
