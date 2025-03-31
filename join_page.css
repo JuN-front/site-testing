@@ -421,9 +421,9 @@
   background: #393939;
 }
 
-.product img {
-  width: 267px;
-  height: 267px;
+.product-photoframe img {
+  width: 200px;
+  height: 200px;
 }
 
 .service-name {
