@@ -199,7 +199,7 @@
   flex-direction: column;
   align-items: center;
   gap: 74px;
-  background-color: var(--shinonome);
+  background: var(--shinonome);
   position: relative;
 }
 
@@ -264,12 +264,15 @@
   line-height: normal;
 }
 
-.event {
+.event-multiple {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
+}
+
+.event {
   color: var(--ivory);
   font-family: var(--noto);
   font-size: var(--font_32);
