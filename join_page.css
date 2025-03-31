@@ -321,7 +321,7 @@
   align-items: center;
   gap: 48px;
   align-self: stretch;
-  animation: slide-flow 20s linear infinite;
+  animation: slide-flow 20s infinite linear 1s both;
 }
 
 .slide {
@@ -329,6 +329,7 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  width: (100vw/7);
 }
 
 .slide img {
@@ -336,10 +337,10 @@
 }
 
 @keyframes slide-flow {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
