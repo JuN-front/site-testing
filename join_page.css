@@ -826,6 +826,10 @@ black-bg(ハンバーガーメニュー解除用bg)
     font-size: var(--font_36);
   }
 
+  .PG-product-list {
+    flex-direction: row;
+  }
+
   .product-row {
     display: none;
   }
