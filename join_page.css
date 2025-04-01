@@ -408,7 +408,7 @@
   align-self: stretch;
 }
 
-.product-row-phone {
+.product-column {
   display: none;
 }
 
@@ -670,7 +670,7 @@ black-bg(ハンバーガーメニュー解除用bg)
   }
 
   .head-letter {
-    right: 11px;
+    right: 41px;
     bottom: 33px;
     font-size: var(--font_48);
   }
@@ -724,32 +724,32 @@ black-bg(ハンバーガーメニュー解除用bg)
   .half-events {
     flex-direction: column;
     align-items: center;
-    gap: 0px;
+    gap: 34px;
   }
 
   .monthly-event {
-    justify-content: unset;
     gap: 12px;
   }
 
   .month-and-event {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 26px;
   }
 
   .month {
     display: flex;
-    gap: 0px;
     justify-content: space-between;
   }
 
   .number {
     font-size: 40px;
+    opacity: 0.4;
   }
 
   .roman {
     font-size: var(--font_32);
+    opacity: 0.4;
   }
 
   .event-multiple {
@@ -766,8 +766,8 @@ black-bg(ハンバーガーメニュー解除用bg)
   }
 
   .monthly-event img {
-    width: 112px;
-    height: 71px;
+    width: 162px;
+    height: 121px;
     flex-shrink: 0;
   }
 
@@ -792,15 +792,13 @@ black-bg(ハンバーガーメニュー解除用bg)
   }
 
   .slider {
-    padding: 0px 20px;
     justify-content: center;
     gap: 48px;
   }
 
   .slide {
     display: flex;
-    width: 221px;
-    height: 132px;
+    width: 200px;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -816,7 +814,7 @@ black-bg(ハンバーガーメニュー解除用bg)
       transform: translateX(0);
     }
     to {
-      transform: translateX(-65.4%);
+      transform: translateX(-56.13%);
     }
   }
 
@@ -832,10 +830,11 @@ black-bg(ハンバーガーメニュー解除用bg)
     display: none;
   }
 
-  .product-row-phone {
+  .product-column {
     display: flex;
     padding: 0px 20px;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     gap: 42px;
     align-self: stretch;
