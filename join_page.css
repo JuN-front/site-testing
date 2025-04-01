@@ -414,6 +414,11 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.product-block:hover {
+  text-decoration: underline 1px solid var(--shinonome);
 }
 
 .product-photoframe {
@@ -424,6 +429,7 @@
 .product-photoframe img {
   width: 200px;
   height: 200px;
+  border-radius: 12px;
 }
 
 .service-name {
@@ -451,12 +457,12 @@
 
 .background-logo-left {
   position: absolute;
-  left: -20px;
+  left: -60px;
   bottom: 34px;
 }
 
 .background-logo-left img {
-  opacity: 0.1;
+  opacity: 0.06;
 }
 
 .footer {
@@ -621,10 +627,6 @@ sp-nav(ナビ)
     font-size: var(--font_32);
     text-decoration: none;
     cursor: pointer;
-
-    a:hover {
-      text-decoration: underline var(--ivory);
-    }
   }
 
   /*ハンバーガーがクリックされたら右からスライド*/
