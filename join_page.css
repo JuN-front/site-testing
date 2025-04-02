@@ -241,21 +241,28 @@
 
 .activity-button {
   display: flex;
-  padding: 16px 40px;
-  justify-content: flex-end;
+  padding-right: 36px;
+  flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  background: var(--ivory);
-  border-radius: 12px;
 }
 
 .about-seminar-section {
   display: flex;
-  width: 90%;
-  padding: 100px 0px 36px 0px;
+  padding: 100px 100px 36px 100px;
   flex-direction: column;
   align-items: flex-end;
   gap: 54px;
+}
+
+.seminar-title {
+  color: var(--gray);
+  text-align: center;
+  font-family: var(--noto);
+  font-size: var(--font_48);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .about-seminar-content {
@@ -295,12 +302,24 @@
 
 .button-content {
   display: flex;
-  padding: 16px 40px;
+  padding: 0px 10px;
   justify-content: flex-end;
   align-items: flex-start;
   gap: 10px;
   border-radius: 12px;
   background: var(--gray);
+  cursor: pointer;
+}
+
+.button-content-gray {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--ivory);
+  cursor: pointer;
 }
 
 .button-text {
@@ -312,6 +331,19 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
+}
+
+.button-text-gray {
+  overflow: hidden;
+  color: var(--gray);
+  text-overflow: ellipsis;
+  font-family: var(--noto);
+  font-size: var(--font_20);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
 }
 
 .join-flow-and-condition-section {
@@ -327,7 +359,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color: var(--ivory);
+  color: var(--gray);
   text-align: center;
   font-family: var(--noto);
   font-size: var(--font_48);
@@ -348,6 +380,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 54px;
+  padding-left: 46px;
+  border-left: 1px solid var(--gray);
 }
 
 .join-flow-block {
@@ -440,8 +474,8 @@
 }
 
 .join-condition-block {
-  width: 420px;
-  height: 80%;
+  width: 350px;
+  height: 150px;
   display: flex;
   padding: 24px 36px;
   flex-direction: column;
