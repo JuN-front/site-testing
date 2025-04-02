@@ -127,7 +127,6 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
-  position: relative;
 }
 
 .carousel-main {
@@ -135,72 +134,50 @@
   align-items: center;
   gap: 48px;
   align-self: stretch;
-  animation: css-carousel-slider-main 25s infinite;
-  animation-delay: 2s;
   z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.carousel {
-  display: flex;
-  z-index: 0;
-  animation: css-carousel-slider 25s infinite;
-  animation-delay: 2s;
-}
-
-@keyframes css-carousel-slider-main {
+@keyframes scroll {
+  /* 初期位置は1個目の画像が左端 */
   0% {
-    transform: translateX(0);
+    margin-left: 0;
   }
-
-  16% {
-    transform: translateX(calc(1 / 5 * -100%));
-  }
+  /* 1個分左の位置に進めて2個目の画像を左端にする */
   20% {
-    transform: translateX(calc(1 / 5 * -100%));
+    margin-left: -100%;
   }
-
-  36% {
-    transform: translateX(calc(2 / 5 * -100%));
+  /* 少しの間上と同じ位置 */
+  25% {
+    margin-left: -100%;
   }
-  40% {
-    transform: translateX(calc(2 / 5 * -100%));
+  /* 2個分左の位置に進めて3個目の画像を左端にする */
+  45% {
+    margin-left: -200%;
   }
-
-  56% {
-    transform: translateX(calc(3 / 5 * -100%));
+  /* 少しの間上と同じ位置 */
+  50% {
+    margin-left: -200%;
   }
-  60% {
-    transform: translateX(calc(3 / 5 * -100%));
+  /* 以降は上と同様に繰り返し */
+  70% {
+    margin-left: -300%;
   }
-
-  76% {
-    transform: translateX(calc(4 / 5 * -100%));
+  75% {
+    margin-left: -300%;
   }
-  80% {
-    transform: translateX(calc(4 / 5 * -100%));
-  }
-
-  96% {
-    transform: translateX(calc(5 / 5 * -100%));
+  95% {
+    margin-left: -400%;
   }
   100% {
-    transform: translateX(calc(5 / 5 * -100%));
+    margin-left: -400%;
   }
 }
-
-@keyframes css-carousel-slider {
-  0% {
-    transform: translateX(100%);
-  }
-  80% {
-    transform: translateX(100%);
-  }
-  96% {
-    transform: translateX(0%);
-  }
+/* カルーセルの子要素にスクロールアニメーションを設定 */
+.carousel-main > :first-child {
+  animation-name: scroll; /* キーフレーム名 */
+  animation-duration: 20s; /* 再生時間全体は20秒 */
+  animation-delay: 0s; /* 読込直後から遅延無しで開始 */
+  animation-iteration-count: infinite; /* 無限に繰り返す */
 }
 
 .slide {
