@@ -133,7 +133,7 @@
   align-items: center;
   gap: 48px;
   align-self: stretch;
-  animation: css-carousel-slide-main 25s infinite;
+  animation: css-carousel-slider-main 25s infinite;
   animation-delay: 2s;
   z-index: 1;
 }
@@ -245,6 +245,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  text-decoration: none;
 }
 
 .about-seminar-section {
@@ -268,7 +269,7 @@
 .about-seminar-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   align-self: stretch;
 }
@@ -298,6 +299,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  text-decoration: none;
 }
 
 .button-content {
@@ -331,7 +333,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-decoration: none;
 }
 
 .button-text-gray {
@@ -343,15 +344,14 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-decoration: none;
 }
 
 .join-flow-and-condition-section {
   display: flex;
-  width: 80%;
   flex-direction: column;
   align-items: center;
   gap: 62px;
+  padding-bottom: 50px;
 }
 
 .join-title {
