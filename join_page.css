@@ -106,7 +106,7 @@
   display: flex;
   padding: 100px 0px 36px 0px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 54px;
   background: var(--shinonome);
 }
@@ -185,7 +185,7 @@
   }
 }
 
-@keyframes css-carousel-slider-main {
+@keyframes css-carousel-slider {
   0% {
     transform: translateX(100%);
   }
@@ -246,6 +246,7 @@
   align-items: flex-start;
   gap: 10px;
   text-decoration: none;
+  align-self: stretch;
 }
 
 .about-seminar-section {
@@ -717,184 +718,6 @@ black-bg(ハンバーガーメニュー解除用bg)
     right: 41px;
     bottom: 33px;
     font-size: var(--font_48);
-  }
-
-  .new-event-section {
-    padding: 59px 42px;
-  }
-
-  .new-event-title {
-    font-size: var(--font_36);
-  }
-
-  .new-event-list {
-    gap: 24px;
-  }
-
-  .event-date {
-    font-family: var(--jomolhari);
-    font-size: var(--font_24);
-  }
-
-  .event-description {
-    font-family: var(--inter);
-    font-size: var(--font_16);
-  }
-
-  .see-more-text {
-    font-size: var(--font_16);
-  }
-
-  .event-link img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .yearly-schedule-section {
-    padding: 100px 0px;
-    gap: 56px;
-  }
-
-  .yearly-schedule-title {
-    font-size: var(--font_36);
-  }
-
-  .yearly-events {
-    flex-direction: column;
-    justify-content: unset;
-    gap: 34px;
-  }
-
-  .half-events {
-    flex-direction: column;
-    align-items: center;
-    gap: 34px;
-  }
-
-  .monthly-event {
-    gap: 12px;
-  }
-
-  .month-and-event {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-  }
-
-  .month {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .number {
-    font-size: 40px;
-    opacity: 0.4;
-  }
-
-  .roman {
-    font-size: var(--font_32);
-    opacity: 0.4;
-  }
-
-  .event-multiple {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .event {
-    font-family: var(--inter);
-    font-size: var(--font_16);
-  }
-
-  .monthly-event img {
-    width: 162px;
-    height: 121px;
-    flex-shrink: 0;
-  }
-
-  .background-logo {
-    position: absolute;
-    right: -30px;
-    bottom: 34px;
-  }
-
-  .background-logo img {
-    opacity: 0.2;
-  }
-
-  .activity-title {
-    font-size: var(--font_36);
-  }
-
-  .slide-wrapper {
-    display: flex;
-    overflow: hidden;
-    gap: 48px;
-  }
-
-  .slider {
-    justify-content: center;
-    gap: 48px;
-  }
-
-  .slide {
-    display: flex;
-    width: 200px;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .slide img {
-    border: 1px solid var(--gray);
-  }
-
-  @keyframes slide-flow {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-56.13%);
-    }
-  }
-
-  .event-name {
-    font-size: var(--font_20);
-  }
-
-  .PG-product-title {
-    font-size: var(--font_36);
-  }
-
-  .PG-product-list {
-    flex-direction: row;
-  }
-
-  .product-row {
-    display: none;
-  }
-
-  .product-column {
-    display: flex;
-    padding: 0px 20px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 42px;
-    align-self: stretch;
-  }
-
-  .product-photoframe {
-    background: var(--ivory);
-  }
-
-  .product-photoframe img {
-    width: 129px;
-    height: 127px;
   }
 
   .footer-top {
