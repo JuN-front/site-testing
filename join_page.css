@@ -126,6 +126,8 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .carousel-main {
@@ -136,9 +138,13 @@
   animation: css-carousel-slider-main 25s infinite;
   animation-delay: 2s;
   z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .carousel {
+  display: flex;
   z-index: 0;
   animation: css-carousel-slider 25s infinite;
   animation-delay: 2s;
