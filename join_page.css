@@ -231,15 +231,13 @@
 }
 
 .left:hover {
-  transition: 0.5s;
-  filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(2099%)
-    hue-rotate(305deg) brightness(108%) contrast(104%);
+  display: none;
+  background-image: url("./images/arrow_left-hover.png");
 }
 
 .right:hover {
-  transition: 0.5s;
-  filter: brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(2099%)
-    hue-rotate(305deg) brightness(108%) contrast(104%);
+  display: none;
+  background-image: url("./images/arrow_right-hover.png");
 }
 
 .activity-button {
