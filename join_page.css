@@ -104,7 +104,7 @@
 
 .about-will-section {
   display: flex;
-  padding: 20px 40px;
+  padding: 50px;
   flex-direction: column;
   align-items: center;
   gap: 48px;
@@ -148,7 +148,7 @@
 
 .latest-information-section {
   display: flex;
-  padding: 100px 0px 36px 0px;
+  padding: 36px 0px 36px 0px;
   flex-direction: column;
   align-items: center;
   gap: 54px;
@@ -224,30 +224,7 @@
   align-items: flex-start;
 }
 
-.left-hover {
-  opacity: 0;
-}
-
-.right-hover {
-  opacity: 0;
-}
-
-.left:hover {
-  opacity: 0;
-  .left-hover {
-    opacity: 1;
-  }
-}
-
-.right:hover {
-  opacity: 0;
-  .right-hover {
-    opacity: 1;
-  }
-}
-
-.move-buttons img,
-.move-buttons-hover img {
+.move-buttons img {
   width: 105px;
   height: 105px;
   cursor: pointer;
