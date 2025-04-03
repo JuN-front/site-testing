@@ -285,6 +285,32 @@
         leftBtn.addEventListener("click", movePrev);
 
         setInterval(moveNext, 3000); // auto-scroll
+
+        const leftArrow = document.querySelector(".left");
+        const rightArrow = document.querySelector(".right");
+
+        // Save original sources
+        const leftSrc = "./images/arrow_left.png";
+        const leftHoverSrc = "./images/arrow_left-hover.png";
+
+        const rightSrc = "./images/arrow_right.png";
+        const rightHoverSrc = "./images/arrow_right-hover.png";
+
+        leftArrow.addEventListener("mouseover", () => {
+          leftArrow.src = leftHoverSrc;
+        });
+
+        leftArrow.addEventListener("mouseout", () => {
+          leftArrow.src = leftSrc;
+        });
+
+        rightArrow.addEventListener("mouseover", () => {
+          rightArrow.src = rightHoverSrc;
+        });
+
+        rightArrow.addEventListener("mouseout", () => {
+          rightArrow.src = rightSrc;
+        });
       });
     </script>
   </body>
