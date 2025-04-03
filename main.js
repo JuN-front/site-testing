@@ -16,7 +16,7 @@ const items = document.querySelectorAll(".item");
 const leftBtn = document.querySelector(".left");
 const rightBtn = document.querySelector(".right");
 const itemWidth = 331; // no gap anymore
-const visibleCount = 1;
+const visibleCount = 2;
 const totalItems = items.length;
 
 let currentIndex = 0;
