@@ -11,40 +11,35 @@ window.onload = function () {
   });
 };
 
-<script>
-  const track = document.querySelector(".carousel-inner");
-  const items = document.querySelectorAll(".item");
-  const leftBtn = document.querySelector(".left");
-  const rightBtn = document.querySelector(".right");
+const track = document.querySelector(".carousel-inner");
+const items = document.querySelectorAll(".item");
+const leftBtn = document.querySelector(".left");
+const rightBtn = document.querySelector(".right");
+const itemWidth = 331; // no gap anymore
+const visibleCount = 1;
+const totalItems = items.length;
 
-  const itemWidth = 331 + 48; // card width + gap
-  const visibleCount = 4;
-  const totalItems = items.length;
+let currentIndex = 0;
 
-  let currentIndex = 0;
+function updateCarousel() {
+  const offset = currentIndex * itemWidth;
+  track.style.transform = `translateX(-${offset}px)`;
+}
 
-  function updateCarousel() {
-    const offset = currentIndex * itemWidth;
-    track.style.transform = `translateX(-${offset}px)`;
-  }
+function moveNext() {
+  currentIndex = (currentIndex + 1) % (totalItems - visibleCount + 1);
+  updateCarousel();
+}
 
-  function moveNext() {
-    currentIndex = (currentIndex + 1) % (totalItems - visibleCount + 1);
-    updateCarousel();
-  }
+function movePrev() {
+  currentIndex =
+    (currentIndex - 1 + (totalItems - visibleCount + 1)) %
+    (totalItems - visibleCount + 1);
+  updateCarousel();
+}
 
-  function movePrev() {
-    currentIndex = (currentIndex - 1 + (totalItems - visibleCount + 1)) % (totalItems - visibleCount + 1);
-    updateCarousel();
-  }
+rightBtn.addEventListener("click", moveNext);
+leftBtn.addEventListener("click", movePrev);
 
-  rightBtn.addEventListener("click", moveNext);
-  leftBtn.addEventListener("click", movePrev);
-
-  // Auto scroll every 3 seconds
-  setInterval(moveNext, 3000);
-</script>
-
-
-
-
+// Auto scroll every 3 seconds
+setInterval(moveNext, 3000);
