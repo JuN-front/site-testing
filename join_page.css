@@ -224,18 +224,33 @@
   align-items: flex-start;
 }
 
-.move-buttons img {
-  width: 105px;
-  height: 105px;
-  cursor: pointer;
+.left-hover {
+  opacity: 0;
+}
+
+.right-hover {
+  opacity: 0;
 }
 
 .left:hover {
-  fill: var(--ivory);
+  opacity: 0;
+  .left-hover {
+    opacity: 1;
+  }
 }
 
 .right:hover {
-  fill: var(--ivory);
+  opacity: 0;
+  .right-hover {
+    opacity: 1;
+  }
+}
+
+.move-buttons img,
+.move-buttons-hover img {
+  width: 105px;
+  height: 105px;
+  cursor: pointer;
 }
 
 .activity-button {
