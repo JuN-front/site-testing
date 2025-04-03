@@ -15,7 +15,7 @@ const track = document.querySelector(".carousel-inner");
 const items = document.querySelectorAll(".item");
 const leftBtn = document.querySelector(".left");
 const rightBtn = document.querySelector(".right");
-const itemWidth = 331; // no gap anymore
+const itemWidth = 331 + 48; // width + gap
 const visibleCount = 2;
 const totalItems = items.length;
 
