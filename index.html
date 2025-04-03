@@ -221,37 +221,71 @@
       </footer>
     </section>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector(".carousel-inner");
-        const items = document.querySelectorAll(".item");
         const leftBtn = document.querySelector(".left");
         const rightBtn = document.querySelector(".right");
 
-        const itemWidth = 331 + 48; // Card + gap
-        const visibleCount = 2;
-        const totalItems = items.length;
+        const cardGap = 48;
+        const cardWidth = 331;
+        let visibleCount = window.innerWidth < 900 ? 1 : 2;
+        let itemWidth = cardWidth + cardGap;
+        let currentIndex = visibleCount;
+        let totalItems;
+        let autoScrollInterval;
 
-        let currentIndex = visibleCount; // start after prepended clones
+        // Save original sources for hover effects
+        const leftSrc = "./images/arrow_left.png";
+        const leftHoverSrc = "./images/arrow_left-hover.png";
+        const rightSrc = "./images/arrow_right.png";
+        const rightHoverSrc = "./images/arrow_right-hover.png";
 
-        // 1. Clone items
-        for (let i = 0; i < visibleCount; i++) {
-          const cloneFirst = items[i].cloneNode(true);
-          const cloneLast = items[totalItems - 1 - i].cloneNode(true);
+        leftBtn.addEventListener(
+          "mouseover",
+          () => (leftBtn.src = leftHoverSrc)
+        );
+        leftBtn.addEventListener("mouseout", () => (leftBtn.src = leftSrc));
+        rightBtn.addEventListener(
+          "mouseover",
+          () => (rightBtn.src = rightHoverSrc)
+        );
+        rightBtn.addEventListener("mouseout", () => (rightBtn.src = rightSrc));
 
-          track.appendChild(cloneFirst); // end
-          track.insertBefore(cloneLast, track.firstChild); // beginning
+        function initializeCarousel() {
+          // Remove all items and rebuild
+          const originalItems = [...track.querySelectorAll(".item")].filter(
+            (item) => !item.classList.contains("cloned")
+          );
+          track.innerHTML = "";
+          originalItems.forEach((item) => track.appendChild(item));
+          totalItems = originalItems.length;
+
+          // Clone for infinite scroll
+          for (let i = 0; i < visibleCount; i++) {
+            const cloneFirst = originalItems[i].cloneNode(true);
+            const cloneLast = originalItems[totalItems - 1 - i].cloneNode(true);
+            cloneFirst.classList.add("cloned");
+            cloneLast.classList.add("cloned");
+            track.appendChild(cloneFirst);
+            track.insertBefore(cloneLast, track.firstChild);
+          }
+
+          currentIndex = visibleCount;
+          itemWidth = cardWidth + cardGap;
+          track.style.transition = "none";
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+          // Restart auto-scroll
+          clearInterval(autoScrollInterval);
+          autoScrollInterval = setInterval(moveNext, 3000);
         }
 
-        const allItems = document.querySelectorAll(".item"); // now includes clones
-        const totalScrollItems = allItems.length;
-
-        // 2. Set initial transform position
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-
         function updateCarousel(smooth = true) {
-          if (!smooth) track.style.transition = "none";
-          else track.style.transition = "transform 0.5s ease-in-out";
-
+          if (!smooth) {
+            track.style.transition = "none";
+          } else {
+            track.style.transition = "transform 0.5s ease-in-out";
+          }
           const offset = currentIndex * itemWidth;
           track.style.transform = `translateX(-${offset}px)`;
         }
@@ -261,7 +295,6 @@
           updateCarousel(true);
 
           if (currentIndex === totalItems + visibleCount) {
-            // 3. Reset after animation ends
             setTimeout(() => {
               currentIndex = visibleCount;
               updateCarousel(false);
@@ -284,33 +317,17 @@
         rightBtn.addEventListener("click", moveNext);
         leftBtn.addEventListener("click", movePrev);
 
-        setInterval(moveNext, 3000); // auto-scroll
-
-        const leftArrow = document.querySelector(".left");
-        const rightArrow = document.querySelector(".right");
-
-        // Save original sources
-        const leftSrc = "./images/arrow_left.png";
-        const leftHoverSrc = "./images/arrow_left-hover.png";
-
-        const rightSrc = "./images/arrow_right.png";
-        const rightHoverSrc = "./images/arrow_right-hover.png";
-
-        leftArrow.addEventListener("mouseover", () => {
-          leftArrow.src = leftHoverSrc;
+        // Responsive handling
+        window.addEventListener("resize", () => {
+          const newCount = window.innerWidth < 900 ? 1 : 2;
+          if (newCount !== visibleCount) {
+            visibleCount = newCount;
+            initializeCarousel();
+          }
         });
 
-        leftArrow.addEventListener("mouseout", () => {
-          leftArrow.src = leftSrc;
-        });
-
-        rightArrow.addEventListener("mouseover", () => {
-          rightArrow.src = rightHoverSrc;
-        });
-
-        rightArrow.addEventListener("mouseout", () => {
-          rightArrow.src = rightSrc;
-        });
+        // Initial setup
+        initializeCarousel();
       });
     </script>
   </body>
