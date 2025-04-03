@@ -212,39 +212,69 @@
     </section>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        console.log("Carousel script running");
-
         const track = document.querySelector(".carousel-inner");
         const items = document.querySelectorAll(".item");
         const leftBtn = document.querySelector(".left");
         const rightBtn = document.querySelector(".right");
 
-        const itemWidth = 331 + 48; // Card width + gap
+        const itemWidth = 331 + 48; // Card + gap
         const visibleCount = 2;
         const totalItems = items.length;
-        const maxIndex = totalItems - visibleCount;
 
-        let currentIndex = 0;
+        let currentIndex = visibleCount; // start after prepended clones
 
-        function updateCarousel() {
+        // 1. Clone items
+        for (let i = 0; i < visibleCount; i++) {
+          const cloneFirst = items[i].cloneNode(true);
+          const cloneLast = items[totalItems - 1 - i].cloneNode(true);
+
+          track.appendChild(cloneFirst); // end
+          track.insertBefore(cloneLast, track.firstChild); // beginning
+        }
+
+        const allItems = document.querySelectorAll(".item"); // now includes clones
+        const totalScrollItems = allItems.length;
+
+        // 2. Set initial transform position
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+        function updateCarousel(smooth = true) {
+          if (!smooth) track.style.transition = "none";
+          else track.style.transition = "transform 0.5s ease-in-out";
+
           const offset = currentIndex * itemWidth;
           track.style.transform = `translateX(-${offset}px)`;
         }
 
         function moveNext() {
-          currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-          updateCarousel();
+          currentIndex++;
+          updateCarousel(true);
+
+          if (currentIndex === totalItems + visibleCount) {
+            // 3. Reset after animation ends
+            setTimeout(() => {
+              currentIndex = visibleCount;
+              updateCarousel(false);
+            }, 500);
+          }
         }
 
         function movePrev() {
-          currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
-          updateCarousel();
+          currentIndex--;
+          updateCarousel(true);
+
+          if (currentIndex < visibleCount) {
+            setTimeout(() => {
+              currentIndex = totalItems;
+              updateCarousel(false);
+            }, 500);
+          }
         }
 
         rightBtn.addEventListener("click", moveNext);
         leftBtn.addEventListener("click", movePrev);
 
-        setInterval(moveNext, 3000); // Auto-scroll
+        setInterval(moveNext, 3000); // auto-scroll
       });
     </script>
   </body>
