@@ -447,35 +447,32 @@
       window.addEventListener("load", () => {
         const slider = document.getElementById("slider");
         const gap = 48;
-        let sliderX = 0;
-        let slideGroupWidth = 0;
-        let speed = 0.5;
+        const speed = 0.5;
+        let offsetX = 0;
 
         // Duplicate slides
-        const originalSlides = Array.from(slider.children);
+        const originalSlides = [...slider.children];
         originalSlides.forEach((slide) => {
-          const clone = slide.cloneNode(true);
-          slider.appendChild(clone);
+          slider.appendChild(slide.cloneNode(true));
         });
 
-        // After layout settles, measure the total width of the original group
+        // Wait for layout
         setTimeout(() => {
-          const slide = originalSlides[0];
-          const slideWidth = slide.offsetWidth;
-          slideGroupWidth = (slideWidth + gap) * originalSlides.length;
+          const singleSlide = originalSlides[0];
+          const totalWidth =
+            (singleSlide.offsetWidth + gap) * originalSlides.length;
 
-          function animate() {
-            sliderX -= speed;
-            slider.style.transform = `translateX(${sliderX}px)`;
+          function scrollLoop() {
+            offsetX -= speed;
+            slider.style.transform = `translateX(${offsetX}px)`;
 
-            if (-sliderX >= slideGroupWidth) {
-              sliderX = 0;
+            if (-offsetX >= totalWidth) {
+              offsetX = 0;
             }
-
-            requestAnimationFrame(animate);
+            requestAnimationFrame(scrollLoop);
           }
 
-          animate();
+          scrollLoop();
         }, 100);
       });
     </script>
