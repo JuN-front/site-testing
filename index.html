@@ -446,9 +446,11 @@
     <script>
       window.addEventListener("load", () => {
         const slider = document.getElementById(".slider");
-        const gap = 48;
+        const slideWrapper = document.querySelector(".slide-wrapper");
+
         let sliderX = 0;
-        let scrollWidth = 0;
+        const speed = 0.5; // pixels per frame
+        const gap = 48;
 
         function duplicateSlides() {
           const slides = Array.from(slider.children);
@@ -458,37 +460,38 @@
           });
         }
 
-        function getTotalOriginalWidth() {
-          const originalSlides = Array.from(slider.children).slice(
-            0,
-            slider.children.length / 2
-          );
-          let totalWidth = 0;
-          originalSlides.forEach((slide) => {
-            totalWidth += slide.offsetWidth;
-          });
-          totalWidth += gap * (originalSlides.length - 1); // add gap spacing
-          return totalWidth;
+        function getSlideWidthWithGap() {
+          const firstSlide = slider.querySelector(".slide");
+          if (!firstSlide) return 0;
+          const slideWidth = firstSlide.offsetWidth;
+          return slideWidth + gap;
         }
 
-        function animateSlider() {
-          sliderX -= 0.5;
-          slider.style.transform = `translateX(${sliderX}px)`;
+        function animateSlider(slideWidthWithGap, originalSlideCount) {
+          function step() {
+            sliderX -= speed;
+            slider.style.transform = `translateX(${sliderX}px)`;
 
-          if (-sliderX >= scrollWidth) {
-            sliderX = 0;
+            const totalScrollWidth = originalSlideCount * slideWidthWithGap;
+            if (-sliderX >= totalScrollWidth) {
+              sliderX = 0;
+            }
+
+            requestAnimationFrame(step);
           }
 
-          requestAnimationFrame(animateSlider);
+          requestAnimationFrame(step);
         }
 
         function initSlider() {
           duplicateSlides();
 
+          // Ensure layout is updated before measuring
           setTimeout(() => {
-            scrollWidth = getTotalOriginalWidth();
-            animateSlider();
-          }, 100); // wait for layout and image load
+            const slideWidthWithGap = getSlideWidthWithGap();
+            const originalSlideCount = slider.children.length / 2;
+            animateSlider(slideWidthWithGap, originalSlideCount);
+          }, 100); // Give time for reflow
         }
 
         initSlider();
