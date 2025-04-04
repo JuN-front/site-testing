@@ -443,40 +443,5 @@
         </div>
       </footer>
     </section>
-    <script>
-      window.addEventListener("load", () => {
-        const slider = document.querySelector(".slider");
-        const slides = Array.from(slider.children);
-        const gap = 48;
-        const speed = 0.5;
-        let offsetX = 0;
-
-        // Step 1: Duplicate slides once (for seamless loop)
-        slides.forEach((slide) => {
-          const clone = slide.cloneNode(true);
-          slider.appendChild(clone);
-        });
-
-        // Step 2: Calculate total scroll width for halfway loop
-        setTimeout(() => {
-          const firstSlide = slides[0];
-          const slideWidth = firstSlide.offsetWidth;
-          const totalWidth = (slideWidth + gap) * slides.length;
-
-          function scrollLoop() {
-            offsetX -= speed;
-            // No reset: allow continuous movement
-            if (-offsetX >= totalWidth) {
-              offsetX = 0; // Snap back to start of original — clones now in view
-            }
-
-            slider.style.transform = `translateX(${offsetX}px)`;
-            requestAnimationFrame(scrollLoop);
-          }
-
-          scrollLoop();
-        }, 100);
-      });
-    </script>
   </body>
 </html>
