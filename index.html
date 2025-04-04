@@ -448,50 +448,35 @@
         const slider = document.getElementById("slider");
         const gap = 48;
         let sliderX = 0;
-        let scrollWidth = 0;
+        let slideGroupWidth = 0;
+        let speed = 0.5;
 
-        function duplicateSlides() {
-          const slides = Array.from(slider.children);
-          slides.forEach((slide) => {
-            const clone = slide.cloneNode(true);
-            slider.appendChild(clone);
-          });
-        }
+        // Duplicate slides
+        const originalSlides = Array.from(slider.children);
+        originalSlides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          slider.appendChild(clone);
+        });
 
-        function getTotalOriginalWidth() {
-          const originalSlides = Array.from(slider.children).slice(
-            0,
-            slider.children.length / 2
-          );
-          let totalWidth = 0;
-          originalSlides.forEach((slide) => {
-            totalWidth += slide.offsetWidth;
-          });
-          totalWidth += gap * (originalSlides.length - 1); // add gap spacing
-          return totalWidth;
-        }
+        // After layout settles, measure the total width of the original group
+        setTimeout(() => {
+          const slide = originalSlides[0];
+          const slideWidth = slide.offsetWidth;
+          slideGroupWidth = (slideWidth + gap) * originalSlides.length;
 
-        function animateSlider() {
-          sliderX -= 0.5;
-          slider.style.transform = `translateX(${sliderX}px)`;
+          function animate() {
+            sliderX -= speed;
+            slider.style.transform = `translateX(${sliderX}px)`;
 
-          if (-sliderX >= scrollWidth) {
-            sliderX = 0;
+            if (-sliderX >= slideGroupWidth) {
+              sliderX = 0;
+            }
+
+            requestAnimationFrame(animate);
           }
 
-          requestAnimationFrame(animateSlider);
-        }
-
-        function initSlider() {
-          duplicateSlides();
-
-          setTimeout(() => {
-            scrollWidth = getTotalOriginalWidth();
-            animateSlider();
-          }, 100); // wait for layout and image load
-        }
-
-        initSlider();
+          animate();
+        }, 100);
       });
     </script>
   </body>
