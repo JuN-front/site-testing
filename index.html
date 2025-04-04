@@ -445,56 +445,43 @@
     </section>
     <script>
       window.addEventListener("load", () => {
-        const slider = document.getElementById(".slider");
-        const slideWrapper = document.querySelector(".slide-wrapper");
+        console.log("✅ Script loaded and running");
 
-        let sliderX = 0;
-        const speed = 0.5; // pixels per frame
+        const slider = document.querySelector(".slider");
+        if (!slider) {
+          console.error("❌ Could not find .slider in the DOM");
+          return;
+        }
+
         const gap = 48;
+        const speed = 0.5;
+        let offsetX = 0;
 
-        function duplicateSlides() {
-          const slides = Array.from(slider.children);
-          slides.forEach((slide) => {
-            const clone = slide.cloneNode(true);
-            slider.appendChild(clone);
-          });
-        }
+        // Duplicate slides
+        const originalSlides = [...slider.children];
+        originalSlides.forEach((slide) => {
+          slider.appendChild(slide.cloneNode(true));
+        });
 
-        function getSlideWidthWithGap() {
-          const firstSlide = slider.querySelector(".slide");
-          if (!firstSlide) return 0;
+        // Wait for layout/render
+        setTimeout(() => {
+          const firstSlide = originalSlides[0];
           const slideWidth = firstSlide.offsetWidth;
-          return slideWidth + gap;
-        }
+          const totalWidth = (slideWidth + gap) * originalSlides.length;
 
-        function animateSlider(slideWidthWithGap, originalSlideCount) {
-          function step() {
-            sliderX -= speed;
-            slider.style.transform = `translateX(${sliderX}px)`;
+          function scrollLoop() {
+            offsetX -= speed;
+            slider.style.transform = `translateX(${offsetX}px)`;
 
-            const totalScrollWidth = originalSlideCount * slideWidthWithGap;
-            if (-sliderX >= totalScrollWidth) {
-              sliderX = 0;
+            if (-offsetX >= totalWidth) {
+              offsetX = 0;
             }
 
-            requestAnimationFrame(step);
+            requestAnimationFrame(scrollLoop);
           }
 
-          requestAnimationFrame(step);
-        }
-
-        function initSlider() {
-          duplicateSlides();
-
-          // Ensure layout is updated before measuring
-          setTimeout(() => {
-            const slideWidthWithGap = getSlideWidthWithGap();
-            const originalSlideCount = slider.children.length / 2;
-            animateSlider(slideWidthWithGap, originalSlideCount);
-          }, 100); // Give time for reflow
-        }
-
-        initSlider();
+          scrollLoop();
+        }, 100);
       });
     </script>
   </body>
