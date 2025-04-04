@@ -443,5 +443,40 @@
         </div>
       </footer>
     </section>
+    <script>
+      const slider = document.getElementById("slider");
+      const slideWrapper = document.querySelector(".slide-wrapper");
+
+      let sliderX = 0;
+      const speed = 0.5; // pixels per frame, adjust for speed
+      let slides;
+
+      function duplicateSlides() {
+        slides = Array.from(slider.children);
+        slides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          slider.appendChild(clone);
+        });
+      }
+
+      function animateSlider() {
+        sliderX -= speed;
+        slider.style.transform = `translateX(${sliderX}px)`;
+
+        // Reset when scrolled past original width
+        const firstHalfWidth = slides.length * (slides[0].offsetWidth + 48);
+        if (-sliderX >= firstHalfWidth) {
+          sliderX = 0;
+        }
+
+        requestAnimationFrame(animateSlider);
+      }
+
+      // Wait for images and DOM to load properly
+      window.addEventListener("load", () => {
+        duplicateSlides();
+        animateSlider();
+      });
+    </script>
   </body>
 </html>
