@@ -446,35 +446,36 @@
     <script>
       window.addEventListener("load", () => {
         const slider = document.querySelector(".slider");
+        const slides = Array.from(slider.children);
         const gap = 48;
         const speed = 0.5;
-        let offsetX = 0;
 
-        const originalSlides = [...slider.children];
-        const totalOriginal = originalSlides.length;
-
-        // ✅ Step 1: Duplicate the original slides
-        originalSlides.forEach((slide) => {
-          slider.appendChild(slide.cloneNode(true));
+        // Step 1: Duplicate slides
+        slides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          slider.appendChild(clone);
         });
 
-        setTimeout(() => {
-          const slideWidth = originalSlides[0].offsetWidth;
-          const totalScroll = (slideWidth + gap) * totalOriginal;
+        let offsetX = 0;
 
-          function animate() {
+        // Step 2: After layout paints, get total scroll distance
+        setTimeout(() => {
+          const slideWidth = slides[0].offsetWidth;
+          const totalScrollWidth = (slideWidth + gap) * slides.length;
+
+          function loop() {
             offsetX -= speed;
             slider.style.transform = `translateX(${offsetX}px)`;
 
-            // ✅ Step 2: Reset position after original slides have scrolled
-            if (-offsetX >= totalScroll) {
+            // Step 3: When we've scrolled past original group, snap back to start
+            if (-offsetX >= totalScrollWidth) {
               offsetX = 0;
             }
 
-            requestAnimationFrame(animate);
+            requestAnimationFrame(loop);
           }
 
-          animate();
+          loop();
         }, 100);
       });
     </script>
