@@ -445,25 +445,18 @@
     </section>
     <script>
       window.addEventListener("load", () => {
-        console.log("✅ Script loaded and running");
-
         const slider = document.querySelector(".slider");
-        if (!slider) {
-          console.error("❌ Could not find .slider in the DOM");
-          return;
-        }
+        if (!slider) return;
 
         const gap = 48;
         const speed = 0.5;
         let offsetX = 0;
 
-        // Duplicate slides
         const originalSlides = [...slider.children];
         originalSlides.forEach((slide) => {
           slider.appendChild(slide.cloneNode(true));
         });
 
-        // Wait for layout/render
         setTimeout(() => {
           const firstSlide = originalSlides[0];
           const slideWidth = firstSlide.offsetWidth;
@@ -474,7 +467,7 @@
             slider.style.transform = `translateX(${offsetX}px)`;
 
             if (-offsetX >= totalWidth) {
-              offsetX = 0;
+              offsetX += totalWidth; // ✅ smooth reset
             }
 
             requestAnimationFrame(scrollLoop);
