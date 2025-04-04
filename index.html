@@ -445,34 +445,37 @@
     </section>
     <script>
       const slider = document.getElementById("slider");
-      const slideWrapper = document.querySelector(".slide-wrapper");
-
       let sliderX = 0;
-      const speed = 0.5; // pixels per frame, adjust for speed
-      let slides;
+      const speed = 0.5; // Adjust speed as needed
+      let slideWidthWithGap = 0;
+      let originalSlides;
 
       function duplicateSlides() {
-        slides = Array.from(slider.children);
-        slides.forEach((slide) => {
+        originalSlides = Array.from(slider.children);
+        originalSlides.forEach((slide) => {
           const clone = slide.cloneNode(true);
           slider.appendChild(clone);
         });
+
+        const singleSlide = originalSlides[0];
+        const style = window.getComputedStyle(slider);
+        const gap = parseInt(style.gap || 0, 10);
+
+        slideWidthWithGap = singleSlide.offsetWidth + gap;
       }
 
       function animateSlider() {
         sliderX -= speed;
         slider.style.transform = `translateX(${sliderX}px)`;
 
-        // Reset when scrolled past original width
-        const firstHalfWidth = slides.length * (slides[0].offsetWidth + 48);
-        if (-sliderX >= firstHalfWidth) {
+        const totalScrollWidth = originalSlides.length * slideWidthWithGap;
+        if (-sliderX >= totalScrollWidth) {
           sliderX = 0;
         }
 
         requestAnimationFrame(animateSlider);
       }
 
-      // Wait for images and DOM to load properly
       window.addEventListener("load", () => {
         duplicateSlides();
         animateSlider();
