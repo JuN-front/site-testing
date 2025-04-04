@@ -445,46 +445,18 @@
     </section>
     <script>
       window.addEventListener("load", () => {
-        console.log("Slider script loaded ✅");
+        console.log("✅ Script running on load");
 
         const slider = document.getElementById("slider");
         if (!slider) {
-          console.error("❌ Slider not found in DOM!");
-          return;
+          console.error("❌ Still can't find #slider");
+        } else {
+          console.log("🎉 Found #slider!");
         }
 
-        const gap = 48;
-        const speed = 0.5;
-        let offsetX = 0;
-
-        const originalSlides = [...slider.children];
-        console.log("Original slides count:", originalSlides.length);
-
-        originalSlides.forEach((slide) => {
-          slider.appendChild(slide.cloneNode(true));
-        });
-
-        setTimeout(() => {
-          const firstSlide = originalSlides[0];
-          const slideWidth = firstSlide.offsetWidth;
-          console.log("Slide width:", slideWidth);
-
-          const totalWidth = (slideWidth + gap) * originalSlides.length;
-          console.log("Total scroll width:", totalWidth);
-
-          function scrollLoop() {
-            offsetX -= speed;
-            slider.style.transform = `translateX(${offsetX}px)`;
-
-            if (-offsetX >= totalWidth) {
-              offsetX = 0;
-            }
-
-            requestAnimationFrame(scrollLoop);
-          }
-
-          scrollLoop();
-        }, 100);
+        // Extra log: what IS in the DOM?
+        console.log("📦 document.body.innerHTML:");
+        console.log(document.body.innerHTML);
       });
     </script>
   </body>
