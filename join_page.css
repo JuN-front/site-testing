@@ -348,7 +348,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-65.4%);
+    transform: translateX(-50%);
   }
 }
 
