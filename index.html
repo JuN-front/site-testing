@@ -445,18 +445,53 @@
     </section>
     <script>
       window.addEventListener("load", () => {
-        console.log("✅ Script running on load");
-
         const slider = document.getElementById(".slider");
-        if (!slider) {
-          console.error("❌ Still can't find #slider");
-        } else {
-          console.log("🎉 Found #slider!");
+        const gap = 48;
+        let sliderX = 0;
+        let scrollWidth = 0;
+
+        function duplicateSlides() {
+          const slides = Array.from(slider.children);
+          slides.forEach((slide) => {
+            const clone = slide.cloneNode(true);
+            slider.appendChild(clone);
+          });
         }
 
-        // Extra log: what IS in the DOM?
-        console.log("📦 document.body.innerHTML:");
-        console.log(document.body.innerHTML);
+        function getTotalOriginalWidth() {
+          const originalSlides = Array.from(slider.children).slice(
+            0,
+            slider.children.length / 2
+          );
+          let totalWidth = 0;
+          originalSlides.forEach((slide) => {
+            totalWidth += slide.offsetWidth;
+          });
+          totalWidth += gap * (originalSlides.length - 1); // add gap spacing
+          return totalWidth;
+        }
+
+        function animateSlider() {
+          sliderX -= 0.5;
+          slider.style.transform = `translateX(${sliderX}px)`;
+
+          if (-sliderX >= scrollWidth) {
+            sliderX = 0;
+          }
+
+          requestAnimationFrame(animateSlider);
+        }
+
+        function initSlider() {
+          duplicateSlides();
+
+          setTimeout(() => {
+            scrollWidth = getTotalOriginalWidth();
+            animateSlider();
+          }, 100); // wait for layout and image load
+        }
+
+        initSlider();
       });
     </script>
   </body>
