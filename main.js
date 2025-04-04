@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
     const originalContentWidth = (slideWidth + gap) * slides.length;
 
     // 👇 Adjust this manually for better timing
-    const resetPoint = originalContentWidth - totalVisibleWidth + 0.5;
+    const resetPoint = originalContentWidth - totalVisibleWidth + 1;
 
     function loop() {
       offsetX -= speed;
