@@ -328,7 +328,7 @@
   align-items: center;
   gap: 48px;
   align-self: stretch;
-  /* animation: slide-flow 20s infinite linear 1s both; */
+  animation: slide-flow 20s infinite linear 1s both;
   will-change: transform;
 }
 
@@ -345,14 +345,14 @@
   border-radius: 12px;
 }
 
-/* @keyframes slide-flow {
+@keyframes slide-flow {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
   }
-} */
+}
 
 .event-name {
   color: var(--gray);
