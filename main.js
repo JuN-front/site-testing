@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
   const slider = document.querySelector(".slider");
   const slides = Array.from(slider.children);
   const gap = 48;
-  const speed = 0.5;
+  const speed = 1.0;
   let offsetX = 0;
 
   // Clone original slides for seamless loop
