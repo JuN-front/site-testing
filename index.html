@@ -446,34 +446,35 @@
     <script>
       window.addEventListener("load", () => {
         const slider = document.querySelector(".slider");
-        if (!slider) return;
-
         const gap = 48;
         const speed = 0.5;
         let offsetX = 0;
 
         const originalSlides = [...slider.children];
+        const totalOriginal = originalSlides.length;
+
+        // ✅ Step 1: Duplicate the original slides
         originalSlides.forEach((slide) => {
           slider.appendChild(slide.cloneNode(true));
         });
 
         setTimeout(() => {
-          const firstSlide = originalSlides[0];
-          const slideWidth = firstSlide.offsetWidth;
-          const totalWidth = (slideWidth + gap) * originalSlides.length;
+          const slideWidth = originalSlides[0].offsetWidth;
+          const totalScroll = (slideWidth + gap) * totalOriginal;
 
-          function scrollLoop() {
+          function animate() {
             offsetX -= speed;
             slider.style.transform = `translateX(${offsetX}px)`;
 
-            if (-offsetX >= totalWidth) {
-              offsetX += totalWidth; // ✅ smooth reset
+            // ✅ Step 2: Reset position after original slides have scrolled
+            if (-offsetX >= totalScroll) {
+              offsetX = 0;
             }
 
-            requestAnimationFrame(scrollLoop);
+            requestAnimationFrame(animate);
           }
 
-          scrollLoop();
+          animate();
         }, 100);
       });
     </script>
