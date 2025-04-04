@@ -330,6 +330,7 @@
   align-self: stretch;
   /* animation: slide-flow 20s infinite linear 1s both; */
   will-change: transform;
+  flex-shrink: 0;
 }
 
 .slide {
