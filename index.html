@@ -444,41 +444,55 @@
       </footer>
     </section>
     <script>
-      const slider = document.getElementById("slider");
-      let sliderX = 0;
-      const speed = 0.5; // Adjust speed as needed
-      let slideWidthWithGap = 0;
-      let originalSlides;
+      window.addEventListener("load", () => {
+        const slider = document.getElementById("slider");
+        const slideWrapper = document.querySelector(".slide-wrapper");
 
-      function duplicateSlides() {
-        originalSlides = Array.from(slider.children);
-        originalSlides.forEach((slide) => {
-          const clone = slide.cloneNode(true);
-          slider.appendChild(clone);
-        });
+        let sliderX = 0;
+        const speed = 0.5; // pixels per frame
+        const gap = 48;
 
-        const singleSlide = originalSlides[0];
-        const style = window.getComputedStyle(slider);
-        const gap = parseInt(style.gap || 0, 10);
-
-        slideWidthWithGap = singleSlide.offsetWidth + gap;
-      }
-
-      function animateSlider() {
-        sliderX -= speed;
-        slider.style.transform = `translateX(${sliderX}px)`;
-
-        const totalScrollWidth = originalSlides.length * slideWidthWithGap;
-        if (-sliderX >= totalScrollWidth) {
-          sliderX = 0;
+        function duplicateSlides() {
+          const slides = Array.from(slider.children);
+          slides.forEach((slide) => {
+            const clone = slide.cloneNode(true);
+            slider.appendChild(clone);
+          });
         }
 
-        requestAnimationFrame(animateSlider);
-      }
+        function getSlideWidthWithGap() {
+          const firstSlide = slider.querySelector(".slide");
+          if (!firstSlide) return 0;
+          const slideWidth = firstSlide.offsetWidth;
+          return slideWidth + gap;
+        }
 
-      window.addEventListener("load", () => {
-        duplicateSlides();
-        animateSlider();
+        function animateSlider(slideWidthWithGap, originalSlideCount) {
+          function step() {
+            sliderX -= speed;
+            slider.style.transform = `translateX(${sliderX}px)`;
+
+            const totalScrollWidth = originalSlideCount * slideWidthWithGap;
+            if (-sliderX >= totalScrollWidth) {
+              sliderX = 0;
+            }
+            requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        function initSlider() {
+          duplicateSlides();
+
+          // Ensure layout is updated before measuring
+          setTimeout(() => {
+            const slideWidthWithGap = getSlideWidthWithGap();
+            const originalSlideCount = slider.children.length / 2;
+            animateSlider(slideWidthWithGap, originalSlideCount);
+          }, 100); // Give time for reflow
+        }
+
+        initSlider();
       });
     </script>
   </body>
