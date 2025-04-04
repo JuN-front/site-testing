@@ -11,6 +11,7 @@ window.onload = function () {
   });
 };
 
+// slider-loop.js
 window.addEventListener("load", () => {
   const slider = document.querySelector(".slider");
   const slides = Array.from(slider.children);
@@ -18,25 +19,31 @@ window.addEventListener("load", () => {
   const speed = 0.5;
   let offsetX = 0;
 
-  // Step 1: Duplicate slides
+  // Clone original slides for seamless loop
   slides.forEach((slide) => {
     const clone = slide.cloneNode(true);
     slider.appendChild(clone);
   });
 
-  // Wait for layout calculation
+  // Allow layout to stabilize before measuring
   setTimeout(() => {
     const firstSlide = slides[0];
     const slideWidth = firstSlide.offsetWidth;
-    const scrollWidth = (slideWidth + gap) * slides.length;
+
+    const visibleSlides = 4; // How many are visible at once
+    const totalVisibleWidth = (slideWidth + gap) * visibleSlides;
+
+    const originalContentWidth = (slideWidth + gap) * slides.length;
+
+    // 👇 Adjust this manually for better timing
+    const resetPoint = originalContentWidth - totalVisibleWidth + 1;
 
     function loop() {
       offsetX -= speed;
 
-      if (-offsetX >= scrollWidth) {
-        // Reset scroll to 0 to keep it seamless
-        slider.style.transform = `translateX(0px)`;
+      if (-offsetX >= resetPoint) {
         offsetX = 0;
+        slider.style.transform = `translateX(0px)`;
       } else {
         slider.style.transform = `translateX(${offsetX}px)`;
       }
@@ -45,5 +52,5 @@ window.addEventListener("load", () => {
     }
 
     loop();
-  }, 50); // slight delay to ensure layout is stable
+  }, 50);
 });
