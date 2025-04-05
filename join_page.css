@@ -648,7 +648,7 @@
     opacity: 0;
     transition: 0.3s;
   }
-  a:hover::after {
+  .nav-link:hover::after {
     bottom: 0;
     opacity: 1;
   }
