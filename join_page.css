@@ -628,7 +628,7 @@
     padding: 10px 0px;
   }
 
-  .sp-nav ul li a {
+  .nav-link {
     color: var(--ivory);
     font-family: var(--noto);
     font-size: var(--font_32);
