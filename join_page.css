@@ -628,12 +628,17 @@
     padding: 10px 0px;
   }
 
-  .sp-nav a {
+  .nav-link {
     color: var(--ivory);
     font-family: var(--noto);
     font-size: var(--font_32);
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline 2px solid var(--ivory);
+    font-weight: bold;
   }
 
   /*ハンバーガーがクリックされたら右からスライド*/
