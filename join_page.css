@@ -636,9 +636,9 @@
     cursor: pointer;
   }
 
-  .nav-link:hover {
-    text-decoration: underline 2px solid var(--ivory) !important;
+  .sp-nav ul li:hover .nav-link {
     font-weight: bold;
+    text-decoration: underline 2px solid var(--ivory);
   }
 
   /*ハンバーガーがクリックされたら右からスライド*/
