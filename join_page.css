@@ -637,7 +637,7 @@
   }
 
   .nav-link:hover {
-    text-decoration: underline 2px solid var(--ivory);
+    text-decoration: underline 2px solid var(--ivory) !important;
     font-weight: bold;
   }
 
