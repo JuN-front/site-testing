@@ -628,7 +628,7 @@
     padding: 10px 0px;
   }
 
-  .nav-link {
+  .nav-link a {
     color: var(--ivory);
     font-family: var(--noto);
     font-size: var(--font_32);
@@ -638,7 +638,7 @@
   }
 
   /* 下線のスタイル */
-  .nav-link::after {
+  .nav-link a::after {
     background-color: var(--ivory); /* 下線の色 */
     bottom: -4px; /* 要素の下端からの距離 */
     content: ""; /* 要素に内容を追加 */
@@ -651,7 +651,7 @@
     width: 100%; /* 要素の幅 */
   }
   /* リンクにホバーした際の下線の表示 */
-  .nav-link:hover::after {
+  .nav-link a:hover::after {
     transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
   }
 
