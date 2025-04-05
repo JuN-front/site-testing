@@ -636,7 +636,7 @@
     cursor: pointer;
   }
 
-  .sp-nav:hover ul li {
+  .sp-nav ul li a:hover {
     font-weight: bold;
     text-decoration: underline 2px solid var(--ivory);
   }
