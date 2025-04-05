@@ -637,7 +637,7 @@
     position: relative;
   }
 
-  .nav-link::after {
+  .open .nav-link::after {
     position: absolute;
     bottom: 0.3em;
     left: 0;
@@ -647,7 +647,7 @@
     background-color: var(--ivory);
     visibility: hidden;
   }
-  .nav-link:hover::after {
+  .open .nav-link:hover::after {
     bottom: 0;
     visibility: visible;
   }
