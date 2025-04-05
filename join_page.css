@@ -628,31 +628,29 @@
     padding: 10px 0px;
   }
 
-  .nav-link a {
+  .nav-link {
     color: var(--ivory);
     font-family: var(--noto);
     font-size: var(--font_32);
     text-decoration: none;
     cursor: pointer;
-    position: absolute;
+    position: relative;
   }
 
-  /* 下線のスタイル */
-  .nav-link a::after {
-    background-color: var(--ivory); /* 下線の色 */
-    bottom: -4px; /* 要素の下端からの距離 */
-    content: ""; /* 要素に内容を追加 */
-    height: 2px; /* 下線の高さ */
-    left: 0; /* 要素の左端からの距離 */
-    position: absolute; /* 絶対位置指定 */
-    transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-    transform-origin: left top; /* 変形の原点を左上に指定 */
-    transition: transform 0.3s; /* 変形をアニメーション化 */
-    width: 100%; /* 要素の幅 */
+  .nav-link::after {
+    position: absolute;
+    bottom: 0.3em;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--ivory);
+    opacity: 0;
+    transition: 0.3s;
   }
-  /* リンクにホバーした際の下線の表示 */
-  .nav-link a:hover::after {
-    transform: scale(1, 1); /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
+  a:hover::after {
+    bottom: 0;
+    opacity: 1;
   }
 
   /*ハンバーガーがクリックされたら右からスライド*/
