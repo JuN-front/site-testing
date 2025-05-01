@@ -5,9 +5,6 @@
   --ivory: #fffcf7;
   --purple_Kimberly: #6b5b7d;
   --gray-50: rgba(83, 83, 83, 0.5);
-  --black: #232323;
-  --white: #ffffff;
-  --ivory-50: rgba(255, 252, 247, 0.5);
 
   --font_70: 70px;
   --font_60: 60px;
@@ -29,20 +26,36 @@
   --ubuntu: "Ubuntu", serif;
   --jomolhari: "Jomolhari", serif;
   --times-new-roman: "Tinos", serif;
-  --inter: "Inter", sans-serif;
-  --esteban: "Esteban", serif;
 }
 
-.join-flow-container {
+html,
+body {
+  margin: 8;
+  padding: 0;
+  font-family: var(--noto);
+  min-height: 100vh;
+  background-color: var(--ivory);
+  padding-bottom: 100px;
+}
+
+.about-us-container {
   display: flex;
   width: 100%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 80px;
+  background-color: var(--ivory);
+  margin-bottom: 160px;
 }
 
 .page-header {
   display: flex;
   padding: 24px 32px;
   justify-content: space-between;
+  align-items: center;
+  background-color: var(--ivory);
 }
 
 .will-logo {
@@ -70,9 +83,9 @@
 }
 
 .text-link:hover {
-  background: var(--shinonome);
+  text-decoration: underline solid 2px;
+  color: black;
   transition: 0.3s;
-  color: var(--ivory);
 }
 
 .head-image-container {
@@ -102,406 +115,313 @@
   line-height: normal;
 }
 
-.about-will-section {
+.head-image-container {
   display: flex;
-  padding: 100px;
   flex-direction: column;
-  align-items: center;
-  gap: 48px;
-}
-
-.will-title-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  align-self: stretch;
+  position: relative;
 }
 
-.will-title {
-  color: var(--gray);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_48);
+.head-image-container img {
+  width: 100%;
+  height: 591px;
+  align-self: stretch;
+}
+
+.head-letter {
+  position: absolute;
+  right: 49px;
+  bottom: 55px;
+  font-size: var(--font_70);
+  font-family: var(--times-new-roman);
+  color: var(--ivory);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.about-will-cover {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
+.nav-wrapper {
+  display: none;
 }
 
-.about-will-description {
-  color: var(--gray);
+.about-us-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 1134px;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.about-will-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+}
+
+.container-title {
+  color: #232323;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size: var(--font_48);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 48px;
+}
+
+.about-will-text {
+  align-self: stretch;
+  color: var(--gray, #535353);
   text-align: center;
   font-family: var(--noto);
-  font-size: var(--font_28);
+  font-size: var(--font_36);
   font-style: normal;
   font-weight: 400;
-  line-height: 129.945%; /* 46.78px */
+  line-height: 129.945%; /* = 46.78px */
   letter-spacing: 3.24px;
-  align-self: stretch;
-}
-
-.latest-information-section {
-  display: flex;
-  padding: 36px 0px 36px 0px;
-  flex-direction: column;
-  align-items: center;
-  gap: 54px;
-  background: var(--shinonome);
-}
-
-.latest-information-title {
-  color: var(--ivory);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_48);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.carousel-inner {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  transition: transform 2s ease-in-out;
-  will-change: transform;
-}
-
-.carousel-track {
   overflow: hidden;
-  width: 100%;
-  max-width: calc((331px + 48px) * 2 - 48px); /* show 2 cards with gap */
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: 0 0 auto;
-}
-
-.item img {
-  width: 331px;
-  height: 218px;
-}
-
-.event-name {
-  color: var(--ivory);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.event-text {
-  color: var(--ivory);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_14);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.move-buttons {
-  display: flex;
-  align-items: flex-start;
-}
-
-.move-buttons img {
-  width: 105px;
-  height: 105px;
-  cursor: pointer;
-}
-
-.activity-button {
-  display: flex;
-  padding-right: 36px;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  text-decoration: none;
-  align-self: stretch;
-}
-
-.about-seminar-section {
-  display: flex;
-  padding: 100px 100px 36px 100px;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 54px;
-}
-
-.seminar-title {
-  color: var(--gray);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_48);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.about-seminar-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  align-self: stretch;
-}
-
-.description-frame {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  align-self: stretch;
-}
-
-.about-seminar-description {
-  color: var(--gray);
-  text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 200%;
-  text-transform: capitalize;
-  align-self: stretch;
-}
-
-.seminar-detail-button {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.button-content {
-  display: flex;
-  padding: 16px 20px;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 12px;
-  background: var(--gray);
-  cursor: pointer;
-}
-
-.button-content-gray {
-  display: flex;
-  padding: 0px 10px;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
-  border-radius: 12px;
-  background: var(--ivory);
-  cursor: pointer;
-}
-
-.button-text {
-  overflow: hidden;
-  color: var(--ivory);
   text-overflow: ellipsis;
-  font-family: var(--noto);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 
-.button-text-gray {
-  overflow: hidden;
-  color: var(--gray);
-  text-overflow: ellipsis;
-  font-family: var(--noto);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.join-flow-and-condition-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 62px;
-}
-
-.join-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  color: var(--gray);
+.vision-container,
+.goal-container {
+  width: 100%;
+  height: auto;
+  align-self: stretch;
   text-align: center;
-  font-family: var(--noto);
-  font-size: var(--font_48);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 
-.join-flow-and-condition-content {
+.vision-text-container,
+.goal-text-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 42px;
-}
-
-.join-flow-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 54px;
-  padding-left: 46px;
-  border-left: 1px solid var(--gray);
-}
-
-.join-flow-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.join-flow-title {
-  display: flex;
-  align-items: flex-start;
   gap: 16px;
 }
 
-.step {
-  display: flex;
-  padding: 20px 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 18px;
-  background: var(--purple_Kimberly);
-}
-
-.step-number {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  color: var(--ivory);
-  font-family: var(--ubuntu);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.step-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.step-title {
-  display: flex;
-  align-items: flex-start;
-  color: var(--purple_Kimberly);
-  font-family: var(--noto);
-  font-size: var(--font_22);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.step-text {
-  display: flex;
-  align-items: flex-start;
-  color: var(--purple_Kimberly);
-  font-family: var(--noto);
-  font-size: var(--font_18);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 199.8%;
-  text-transform: capitalize;
-}
-
-.step-explanation {
-  display: flex;
-  padding: 0px 24px 20px 24px;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  flex: 1 0 0;
-  color: var(--gray);
-  font-family: var(--noto);
-  font-size: var(--font_20);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 199.8%;
-  text-transform: capitalize;
-}
-
-.join-conditions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  align-self: stretch;
-}
-
-.join-condition-block {
-  width: 350px;
-  height: 150px;
-  display: flex;
-  padding: 24px 36px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  border-radius: 12px;
+.vision-text-box,
+.goal-text-box {
   background: var(--shinonome);
+  border-radius: 12px;
+  padding: 32px 56px;
 }
 
-.condition-title {
+.vision-text,
+.goal-text {
+  color: white;
+  text-align: center;
+  align-self: stretch;
   font-family: var(--noto);
   font-size: var(--font_32);
   font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  color: var(--ivory);
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-weight: 400;
+  line-height: 129.945%;
+  letter-spacing: 3.24px;
 }
 
-.condition-detail {
-  font-family: var(--noto);
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列構成 */
+  gap: 80px 64px;
+  justify-content: center;
+  align-items: center; /* 🔸ここで"縦方向の中央揃え"に */
+}
+
+.chart-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 422px;
+  height: 326px;
+}
+
+.chart-title {
   font-size: var(--font_24);
+  font-weight: bold;
+  color: var(--gray);
+  margin-bottom: 28px;
+  text-align: center;
+  width: 100%;
+}
+
+.chart-content {
+  display: flex;
+  justify-content: flex-start;
+  gap: 28px;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  width: 266px !important;
+  height: 266px !important;
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--font_16);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--gray);
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-color.male {
+  background-color: #6d9ea8;
+}
+.legend-color.female {
+  background-color: #f7c76f;
+}
+.legend-color.fourth {
+  background-color: #f39ca8;
+}
+.legend-color.third {
+  background-color: #a8d6cc;
+}
+.legend-color.second {
+  background-color: #f7c76f;
+}
+.legend-color.first {
+  background-color: #9fb8d2;
+}
+.legend-color.waseda {
+  background-color: #6d9ea8;
+}
+.legend-color.other {
+  background-color: #f7c76f;
+}
+.legend-color.sci {
+  background-color: #f39ca8;
+}
+.legend-color.hum {
+  background-color: #a8d6cc;
+}
+.legend-color.edu {
+  background-color: #f7c76f;
+}
+.legend-color.com {
+  background-color: #9fb8d2;
+}
+
+.legend-color.master {
+  background-color: #6d9ea8;
+} /* 修士等 */
+
+.legend-color.poli {
+  background-color: #f39ca8;
+} /* 政経 */
+.legend-color.law {
+  background-color: #a8d6cc;
+} /* 法 */
+.legend-color.com {
+  background-color: #f7c76f;
+} /* 商  ※既存 */
+.legend-color.soc {
+  background-color: #9fb8d2;
+} /* 社学 */
+.legend-color.edu {
+  background-color: #6d9ea8;
+} /* 教育 ※既存 */
+.legend-color.sgs {
+  background-color: #c0a9e8;
+} /* 国教 */
+.legend-color.lit {
+  background-color: #ffa07a;
+} /* 文 */
+.legend-color.hum {
+  background-color: #98fb98;
+} /* 文構 ※既存色入替可 */
+.legend-color.sci {
+  background-color: #dda0dd;
+} /* 基幹 ※既存 */
+.legend-color.crea {
+  background-color: #ffb6c1;
+} /* 創造 */
+.legend-color.adv {
+  background-color: #87cefa;
+} /* 先進 */
+.legend-color.hss {
+  background-color: #ffa500;
+} /* 人科 */
+.legend-color.sport {
+  background-color: #20b2aa;
+} /* スポ科 */
+
+.relationship-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.relationship-text {
+  align-self: stretch;
+  color: var(--gray, #535353);
+  font-family: var(--noto);
+  font-size: var(--font_36);
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  color: var(--ivory);
+  line-height: 129.945%; /* = 46.78px */
+  letter-spacing: 3.24px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-bottom: 40px;
 }
 
-.detail-mini {
-  font-size: var(--font_16);
-  color: var(--ivory);
+.relationship-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.link-playground-hp-container {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.link-playground-hp {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+}
+
+.link-playground-hp-square {
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  background: var(--shinonome);
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  font-size: var(--font_20);
+}
+
+.link-playground-hp-square:hover {
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
 .footer {
@@ -509,7 +429,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--ivory);
 }
 
 .footer-top {
@@ -519,6 +438,7 @@
   align-items: center;
   gap: 80px;
   align-self: stretch;
+  background-color: var(--ivory);
 }
 
 .footer-sm-logo {
@@ -532,21 +452,25 @@
   padding: 10px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  cursor: pointer;
+}
+
+.x-logo img {
+  width: 42px;
+  height: 42px;
 }
 
 .instagram-logo {
   display: flex;
-  padding: 12px;
-  flex-direction: column;
+  padding: 10px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  cursor: pointer;
 }
 
 .instagram-logo img {
-  width: 85px;
-  height: 79px;
+  width: 56px;
+  height: 56px;
 }
 
 .footer-logo {
@@ -566,28 +490,32 @@
 }
 
 .footer-copyright img {
-  width: 32px;
-  height: 32px;
+  background-color: var(--ivory);
 }
 
 .copyright-text {
   color: var(--gray);
   font-family: var(--times-new-roman);
-  font-size: var(--font_32);
+  font-size: var(--font_18);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.72px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+  html,
+  body {
+    padding-bottom: 0px;
+  }
+
   .nav-wrapper {
     display: flex;
   }
 
   /* 
-  hamburger(ハンバーガーアイコン)
-  =================================== */
+    hamburger(ハンバーガーアイコン)
+    =================================== */
   .hamburger {
     position: absolute;
     right: 30px;
@@ -635,8 +563,8 @@
   }
 
   /* 
-  sp-nav(ナビ)
-  =================================== */
+    sp-nav(ナビ)
+    =================================== */
   .sp-nav {
     position: fixed;
     right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
@@ -673,8 +601,8 @@
     right: 0;
   }
   /* 
-  black-bg(ハンバーガーメニュー解除用bg)
-  =================================== */
+    black-bg(ハンバーガーメニュー解除用bg)
+    =================================== */
   .black-bg {
     position: fixed;
     left: 0;
@@ -705,123 +633,52 @@
   }
 
   .head-letter {
+    font-size: var(--font_48);
     right: 41px;
     bottom: 33px;
-    font-size: var(--font_48);
   }
 
-  .about-will-section {
-    padding: 100px 40px;
-  }
-
-  .about-will-description {
+  .about-will-text {
     font-size: var(--font_24);
   }
 
-  .latest-information-section {
-    padding: 100px 0px;
-    gap: 40px;
-  }
-
-  .carousel-container {
-    gap: 12px;
-  }
-
-  .carousel-inner {
-    justify-content: flex-start;
-  }
-
-  .carousel-track {
-    max-width: 331px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .item {
-    flex: 0 0 auto;
-  }
-
-  .item img {
-    width: 331px;
-    height: 200px;
-    flex-shrink: 0;
-  }
-
-  .move-buttons {
-    padding-bottom: 12px;
-  }
-
-  .move-buttons img {
-    width: 66px;
-    height: 66px;
-  }
-
-  .about-seminar-section {
-    padding: 100px 40px 50px 40px;
-    align-items: center;
-  }
-
-  .seminar-title {
+  .container-title {
     font-size: var(--font_32);
-    font-weight: 500;
   }
 
-  .join-flow-and-condition-section {
-    gap: 56px;
-    padding: 100px 0px;
-  }
-
-  .join-title {
-    gap: 0px;
-    font-size: var(--font_32);
-    font-weight: 500;
-  }
-
-  .join-flow-and-condition-content {
-    gap: 0px;
-  }
-
-  .join-flow-details {
-    border-left: 5px solid var(--gray);
-  }
-
-  .join-flow-title {
-    align-items: center;
-  }
-
-  .step {
-    gap: 10px;
-  }
-
-  .join-conditions {
-    flex-direction: column;
-  }
-
-  .join-condition-block {
-    width: 300px;
-    height: 100px;
-    gap: 16px;
-  }
-
-  .condition-title {
+  .vision-text,
+  .goal-text {
     font-size: var(--font_24);
   }
 
-  .condition-detail {
+  .chart-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .relationship-container {
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .link-playground-hp-container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .link-playground-hp {
+    display: block;
+  }
+
+  .link-playground-hp-square {
     font-size: var(--font_16);
   }
 
-  .detail-mini {
-    font-size: var(--font_12);
-  }
-
-  .button-content {
-    padding: 5px 20px;
-  }
-
   .footer-top {
-    padding: 40px 0px 20px 0px;
     flex-direction: column-reverse;
+    padding: 40px 0px 20px 0px;
     gap: 30px;
   }
 
@@ -832,27 +689,128 @@
   .footer-sm-logo {
     gap: 18px;
   }
+}
 
-  .x-logo img {
-    width: 40px;
-    height: 40px;
+/* ───────────────────────────
+     ① Smart phone  (0 – 639 px)
+     ─────────────────────────── */
+@media (max-width: 639px) {
+  .about-us-container {
+    margin-bottom: 40px;
   }
 
-  .instagram-logo img {
-    width: 40px;
-    height: 40px;
+  /* 共通レイアウト ------------------------------- */
+  .about-us-section {
+    width: 90%;
+    padding: 0 16px;
+    gap: 80px;
   }
 
-  .footer-copyright {
-    gap: 8px;
+  .head-image-container img {
+    height: 240px;
+  }
+  .head-letter {
+    font-size: var(--font_40);
+    right: 16px;
+    bottom: 16px;
   }
 
-  .footer-copyright img {
-    width: 24px;
-    height: 24px;
+  /* タイトル & テキスト --------------------------- */
+  .container-title {
+    font-size: var(--font_28);
+    margin-bottom: 32px;
   }
-
-  .copyright-text {
+  .about-will-text,
+  .relationship-text {
     font-size: var(--font_18);
+    letter-spacing: 1.2px;
+  }
+  .vision-text-box,
+  .goal-text-box {
+    padding: 24px 20px;
+  }
+  .vision-text,
+  .goal-text {
+    font-size: var(--font_20);
+    letter-spacing: 1.5px;
+  }
+
+  /* グラフ系 ------------------------------------- */
+  .chart-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .chart-box {
+    width: 100%;
+    height: auto;
+  }
+  canvas {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  .chart-legend {
+    font-size: var(--font_14);
+  }
+
+  /* 関連リンク・画像 ------------------------------ */
+  .relationship-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  .link-playground-hp-container {
+    justify-content: center;
+  }
+  .link-playground-hp-square {
+    font-size: var(--font_14);
+    padding: 12px 24px;
+  }
+}
+
+/* ───────────────────────────
+       ② Tablet  (640 – 1023 px)
+       ─────────────────────────── */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .about-us-section {
+    width: 90%;
+    gap: 120px;
+  }
+
+  .head-image-container img {
+    height: 320px;
+  }
+  .head-letter {
+    font-size: var(--font_48);
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .container-title {
+    font-size: var(--font_32);
+  }
+  .about-will-text,
+  .relationship-text {
+    font-size: var(--font_24);
+  }
+
+  .vision-text-box,
+  .goal-text-box {
+    padding: 28px 40px;
+  }
+  .vision-text,
+  .goal-text {
+    font-size: var(--font_24);
+  }
+
+  .chart-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+  }
+  .chart-box {
+    width: 100%;
+    height: auto;
+  }
+  canvas {
+    width: 220px !important;
+    height: 220px !important;
   }
 }
