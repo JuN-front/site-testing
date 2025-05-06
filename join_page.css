@@ -342,7 +342,7 @@
 
 .slide img {
   width: 400px;
-  height: 200px;
+  height: 250px;
   border-radius: 12px;
 }
 
@@ -809,6 +809,8 @@
   }
 
   .slide img {
+    width: 200px;
+    height: 125px;
     border: 1px solid var(--gray);
   }
 
