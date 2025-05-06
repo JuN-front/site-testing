@@ -341,7 +341,8 @@
 }
 
 .slide img {
-  width: 140px;
+  width: 200px;
+  height: 160px;
   border-radius: 12px;
 }
 
