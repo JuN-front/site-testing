@@ -338,11 +338,10 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  width: calc(100vw / 4);
 }
 
 .slide img {
-  aspect-ratio: 3/2;
+  width: 140px;
   border-radius: 12px;
 }
 
